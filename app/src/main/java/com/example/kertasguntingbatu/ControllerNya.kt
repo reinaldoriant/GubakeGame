@@ -1,17 +1,15 @@
 package com.example.kertasguntingbatu
 
-import android.security.identity.ResultData
-
-class ControllerNya(val listener: IControllerNya) {
+class ControllerNya(private val listener: IControllerNya) {
     private var dataPlayer: ModelNya? = null
-    private var dataComp: ModelNya? = null
+    private var dataComp: ModelnyaComp? = null
 
     // private var data: ModelNya? = null
     fun setDataPlayer(dataPlayer: ModelNya) {
         this.dataPlayer = dataPlayer
     }
 
-    fun setDataComp(dataComp: ModelNya) {
+    fun setDataComp(dataComp: ModelnyaComp) {
         this.dataComp = dataComp
     }
 
@@ -19,23 +17,20 @@ class ControllerNya(val listener: IControllerNya) {
          this.data=data
      }*/
     fun compareData() {
-        val dataComp: String? = null
-        val dataPlayer: String? = null
-        var dataResult: String? = null
+
         //dataPlayer  Menang
-        if (dataPlayer.equals("Batu", true) && dataComp.equals("Gunting", true) ||
-                dataPlayer.equals("Kertas", true) && dataComp.equals("Batu", true) ||
-                dataPlayer.equals("Gunting", true) && dataComp.equals("Kertas", true)) {
-            dataResult = "PlayerMenang"
-            listener.result(dataResult)
+        if (dataPlayer!!.dataPlayer.equals("Batu", true) && dataComp!!.dataComp.equals("Gunting", true) ||
+                dataPlayer!!.dataPlayer.equals("Kertas", true) && dataComp!!.dataComp.equals("Batu", true) ||
+                dataPlayer!!.dataPlayer.equals("Gunting", true) && dataComp!!.dataComp.equals("Kertas", true)) {
+            listener.result("Player Menang")
         }
         //data comp Menang
-        else if (dataComp.equals("Batu", true) && dataPlayer.equals("Gunting", true) ||
-                dataComp.equals("Kertas", true) && dataPlayer.equals("Batu", true) ||
-                dataComp.equals("Gunting", true) && dataPlayer.equals("Kertas", true)) {
-            //dataResult = "CompMenang"
+        else if (dataComp!!.dataComp.equals("Batu", true) && dataPlayer!!.dataPlayer.equals("Gunting", true) ||
+                dataComp!!.dataComp.equals("Kertas", true) && dataPlayer!!.dataPlayer.equals("Batu", true) ||
+                dataComp!!.dataComp.equals("Gunting", true) && dataPlayer!!.dataPlayer.equals("Kertas", true)) {
+            listener.result("Player Kalah")
         } else {
-            // dataResult = "Seri"
+            listener.result("Seri")
         }
     }
 
