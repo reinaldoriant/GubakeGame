@@ -196,11 +196,11 @@ class MainGame : AppCompatActivity(), IControllerNya {
     override fun result(resultNya: String) {
         resultImg[0].animate().alpha(0f).scaleX(0.5f).scaleY(0.5f).setDuration(0).start()
         when (resultNya) {
-            "Player Menang" -> {
+            "PlayerMenang" -> {
                 resultImg[1].visibility = View.VISIBLE
                 resultImg[1].animate().alpha(1f).scaleX(-1f).scaleY(-1f).setDuration(1000).start()
             }
-            "Player Kalah" -> {
+            "CompMenang" -> {
                 resultImg[2].visibility = View.VISIBLE
                 resultImg[2].animate().alpha(1f).scaleX(-1f).scaleY(-1f).setDuration(1000).start()
             }

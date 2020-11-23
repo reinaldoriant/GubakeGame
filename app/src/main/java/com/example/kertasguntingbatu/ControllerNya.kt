@@ -6,7 +6,7 @@ import android.util.Log
 
 class ControllerNya(private val listener: IControllerNya) {
     private var dataPlayer: ModelNya? = null
-    private var dataCompRand = arrayListOf("batu", "kertas", "gunting")
+    private var dataCompRand = arrayListOf("batu", "kertas", "gunting","kertas", "batu", "gunting","gunting", "batu", "kertas")
     private var compRandData = dataCompRand.random()
 
     fun setDataPlayer(dataPlayer: ModelNya) {
@@ -28,13 +28,13 @@ class ControllerNya(private val listener: IControllerNya) {
         val resultNya:String = if (dataPlayer!!.dataPlayer==("Batu") && compRandData==("gunting") ||
                 dataPlayer!!.dataPlayer==("Kertas") && compRandData==("batu") ||
                 dataPlayer!!.dataPlayer==("Gunting") && compRandData==("kertas")) {
-            "Player Menang"
+            "PlayerMenang"
         }
         //data comp Menang
         else if (compRandData == "batu" && dataPlayer!!.dataPlayer==("Gunting") ||
                 compRandData==("kertas") && dataPlayer!!.dataPlayer==("Batu") ||
                 compRandData==("gunting") && dataPlayer!!.dataPlayer==("Kertas")) {
-            "Comp Menang"
+            "CompMenang"
         } else {
             "Seri"
         }
