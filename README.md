@@ -1,5 +1,8 @@
 # KertasGuntingBatu
 ![asciicast](https://img.shields.io/badge/Android-Studio-green)
+![asciicast](https://img.shields.io/badge/Kotlin-Language-yellow)
+
+
 a Janken Game V.1.0. is ordinary game using MVC concept and Binar Academy Wave 4 (Gold) assignment
 
 Demo :
