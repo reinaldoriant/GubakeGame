@@ -1,37 +1,43 @@
 package com.example.kertasguntingbatu
 
+import android.util.Log
+
 class ControllerNya(private val listener: IControllerNya) {
     private var dataPlayer: ModelNya? = null
-    private var dataComp: ModelnyaComp? = null
+    private var dataCompRand = arrayListOf("batu", "kertas", "gunting")
+    private var compRandData = dataCompRand.random()
 
-    // private var data: ModelNya? = null
     fun setDataPlayer(dataPlayer: ModelNya) {
         this.dataPlayer = dataPlayer
     }
 
-    fun setDataComp(dataComp: ModelnyaComp) {
-        this.dataComp = dataComp
+    fun compProcess() {
+        listener.resultRandom(compRandData)
+        Log.i("ControllerNya", "Akhirnya Comp memilih juga = $compRandData")
     }
 
-    /* fun getDataResult(data:ModelNya){
-         this.data=data
-     }*/
-    fun compareData() {
+    fun compRand() {
+        val dataCompFix=dataCompRand.random()
+        listener.randAnim(dataCompFix)
+    }
 
+    fun compareData() {
         //dataPlayer  Menang
-        if (dataPlayer!!.dataPlayer.equals("Batu", true) && dataComp!!.dataComp.equals("Gunting", true) ||
-                dataPlayer!!.dataPlayer.equals("Kertas", true) && dataComp!!.dataComp.equals("Batu", true) ||
-                dataPlayer!!.dataPlayer.equals("Gunting", true) && dataComp!!.dataComp.equals("Kertas", true)) {
-            listener.result("Player Menang")
+        val resultNya:String = if (dataPlayer!!.dataPlayer==("Batu") && compRandData==("gunting") ||
+                dataPlayer!!.dataPlayer==("Kertas") && compRandData==("batu") ||
+                dataPlayer!!.dataPlayer==("Gunting") && compRandData==("kertas")) {
+            "Player Menang"
         }
         //data comp Menang
-        else if (dataComp!!.dataComp.equals("Batu", true) && dataPlayer!!.dataPlayer.equals("Gunting", true) ||
-                dataComp!!.dataComp.equals("Kertas", true) && dataPlayer!!.dataPlayer.equals("Batu", true) ||
-                dataComp!!.dataComp.equals("Gunting", true) && dataPlayer!!.dataPlayer.equals("Kertas", true)) {
-            listener.result("Player Kalah")
+        else if (compRandData == "batu" && dataPlayer!!.dataPlayer==("Gunting") ||
+                compRandData==("kertas") && dataPlayer!!.dataPlayer==("Batu") ||
+                compRandData==("gunting") && dataPlayer!!.dataPlayer==("Kertas")) {
+            "Comp Menang"
         } else {
-            listener.result("Seri")
+            "Seri"
         }
+        listener.result(resultNya)
+        Log.i("Controllernya", "Siapa nih yang menang $resultNya")
     }
 
 

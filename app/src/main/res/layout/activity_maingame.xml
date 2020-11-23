@@ -64,7 +64,7 @@
                     android:layout_height="100dp"
                     android:layout_centerInParent="true"
                     android:background="@drawable/bg_shape"
-                    android:visibility="invisible" />
+                     />
 
                 <ImageButton
                     android:id="@+id/batuPlayer"
@@ -89,7 +89,7 @@
                     android:layout_height="100dp"
                     android:layout_centerInParent="true"
                     android:background="@drawable/bg_shape"
-                    android:visibility="invisible" />
+                     />
 
                 <ImageButton
                     android:id="@+id/paperPlayer"
@@ -113,7 +113,7 @@
                     android:layout_height="100dp"
                     android:layout_centerInParent="true"
                     android:background="@drawable/bg_shape"
-                    android:visibility="invisible" />
+                    />
 
                 <ImageButton
                     android:id="@+id/scissorsPlayer"
@@ -130,8 +130,8 @@
             </RelativeLayout>
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="150dp"
+        <RelativeLayout
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="center"
             android:orientation="vertical">
@@ -146,8 +146,38 @@
                 android:layout_marginBottom="24dp"
                 android:contentDescription="@string/versus_image"
                 android:src="@drawable/ic_battle_image" />
+            <ImageView
+                android:id="@+id/imagePlayerWin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="24dp"
+                android:contentDescription="@string/versus_image"
+                android:src="@drawable/ic_playerwinner" />
+            <ImageView
+                android:id="@+id/imageCompWin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="24dp"
+                android:contentDescription="@string/versus_image"
+                android:src="@drawable/ic_compwinner" />
+            <ImageView
+                android:id="@+id/imageDraw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="24dp"
+                android:contentDescription="@string/versus_image"
+                android:src="@drawable/ic_draw" />
 
-        </LinearLayout>
+        </RelativeLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -176,7 +206,7 @@
                     android:layout_height="100dp"
                     android:layout_centerInParent="true"
                     android:background="@drawable/bg_shape"
-                    android:visibility="invisible" />
+                     />
 
                 <ImageButton
                     android:id="@+id/batuComp"
@@ -201,7 +231,7 @@
                     android:layout_height="100dp"
                     android:layout_centerInParent="true"
                     android:background="@drawable/bg_shape"
-                    android:visibility="invisible" />
+                    />
 
                 <ImageButton
                     android:id="@+id/paperComp"
@@ -226,7 +256,7 @@
                     android:layout_height="100dp"
                     android:layout_centerInParent="true"
                     android:background="@drawable/bg_shape"
-                    android:visibility="invisible" />
+                    />
 
                 <ImageButton
                     android:id="@+id/scissorsComp"
@@ -239,7 +269,6 @@
                     android:layout_marginBottom="24dp"
                     android:background="@drawable/ic_scissors_but"
                     android:contentDescription="@string/scissors_icon" />
-
             </RelativeLayout>
 
 

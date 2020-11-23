@@ -1,6 +1,7 @@
 package com.example.kertasguntingbatu
 
 interface IControllerNya {
-
-    fun result(hasil:String)
+    fun resultRandom(resultRand:String)
+    fun result(resultNya:String)
+    fun randAnim(animResult:String)
 }
