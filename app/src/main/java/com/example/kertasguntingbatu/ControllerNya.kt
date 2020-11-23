@@ -2,6 +2,8 @@ package com.example.kertasguntingbatu
 
 import android.util.Log
 
+
+
 class ControllerNya(private val listener: IControllerNya) {
     private var dataPlayer: ModelNya? = null
     private var dataCompRand = arrayListOf("batu", "kertas", "gunting")
@@ -13,7 +15,7 @@ class ControllerNya(private val listener: IControllerNya) {
 
     fun compProcess() {
         listener.resultRandom(compRandData)
-        Log.i("ControllerNya", "Akhirnya Comp memilih juga = $compRandData")
+        Log.i("ControllerNya", "Akhirnya Comp memilih :$compRandData")
     }
 
     fun compRand() {

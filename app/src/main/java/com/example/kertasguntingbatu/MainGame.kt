@@ -5,13 +5,16 @@ import android.os.Handler
 import android.os.Looper
 import android.util.Log
 import android.view.View
-import android.widget.*
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
+import android.widget.FrameLayout
+import android.widget.ImageButton
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 
 
 class MainGame : AppCompatActivity(), IControllerNya {
-
     private var dataPlayer = ""
     private val setImage by lazy {
         findViewById<ImageView>(R.id.imageBattle)
@@ -36,11 +39,12 @@ class MainGame : AppCompatActivity(), IControllerNya {
         )
     }
     private val controller = ControllerNya(this)
-    private val randDuration = 100L
+    private val randDuration = 200L
     private var randNum = 0
 
     /*private var randomCompCl = RandomComp()*/
     override fun onCreate(savedInstanceState: Bundle?) {
+        val animation: Animation = AnimationUtils.loadAnimation(this, R.anim.bounce)
         supportActionBar?.hide()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maingame)
@@ -53,6 +57,7 @@ class MainGame : AppCompatActivity(), IControllerNya {
                 when (it) {
                     buttonAll[0] -> {
                         if (!backAll[0].isVisible) {
+                            buttonAll[0].startAnimation(animation)
                             backAll[0].visibility = View.VISIBLE
 
                         }
@@ -60,12 +65,14 @@ class MainGame : AppCompatActivity(), IControllerNya {
                     }
                     buttonAll[1] -> {
                         if (!backAll[1].isVisible) {
+                            buttonAll[1].startAnimation(animation)
                             backAll[1].visibility = View.VISIBLE
                         }
                         this.dataPlayer = "Gunting"
                     }
                     else -> {
                         if (!backAll[2].isVisible) {
+                            buttonAll[2].startAnimation(animation)
                             backAll[2].visibility = View.VISIBLE
                         }
                         this.dataPlayer = "Kertas"
@@ -92,7 +99,7 @@ class MainGame : AppCompatActivity(), IControllerNya {
                     }, randDuration)
                 }
         Handler(Looper.getMainLooper()).postDelayed({
-            if (randNum <= 30) {
+            if (randNum <= 10) {
                 controller.compRand()
                 Log.i("MainActivity", "Perulangan Computer #${randNum}")
             } else {
@@ -132,9 +139,6 @@ class MainGame : AppCompatActivity(), IControllerNya {
             }
 
         }
-
-
-        //Log.i("MainGame", "Cieee bisa buka lagi")
     }
 
     private fun reset() {
@@ -194,23 +198,18 @@ class MainGame : AppCompatActivity(), IControllerNya {
         when (resultNya) {
             "Player Menang" -> {
                 resultImg[1].visibility = View.VISIBLE
-                resultImg[1].animate().alpha(1f).scaleX(1f).scaleY(1f).rotation(350f).setDuration(1000)
-                        .start()
-
+                resultImg[1].animate().alpha(1f).scaleX(-1f).scaleY(-1f).setDuration(1000).start()
             }
             "Player Kalah" -> {
                 resultImg[2].visibility = View.VISIBLE
-                resultImg[2].animate().alpha(1f).scaleX(1f).scaleY(1f).rotation(350f).setDuration(1000)
-                        .start()
+                resultImg[2].animate().alpha(1f).scaleX(-1f).scaleY(-1f).setDuration(1000).start()
             }
             "Seri" -> {
                 resultImg[3].visibility = View.VISIBLE
-                resultImg[3].animate().alpha(1f).scaleX(1f).scaleY(1f).rotation(350f).setDuration(1000)
-                        .start()
+                resultImg[3].animate().alpha(1f).scaleX(-1f).scaleY(-1f).setDuration(1000).start()
             }
-
         }
-        buttonAll[3].animate().alpha(1f).scaleX(1f).scaleY(1f).rotation(-180f).setDuration(1000).start()
+        buttonAll[3].animate().alpha(1f).scaleX(-1f).scaleY(-1f).rotation(-180f).setDuration(1000).start()
         Log.i("MainActivity", "pemenangnya : $resultNya")
     }
 }
