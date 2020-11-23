@@ -213,6 +213,3 @@ class MainGame : AppCompatActivity(), IControllerNya {
         Log.i("MainActivity", "pemenangnya : $resultNya")
     }
 }
-
-
-
