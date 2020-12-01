@@ -11,11 +11,15 @@ Demo :
 ![asciicast](https://media.giphy.com/media/xZqamKL9CVqJwBKUCn/giphy.gif)
 
 Update History :
-#23 November 2020 
+
+**23 November 2020**
 add layout v26 and fix bug (v1.2)
-#22 November 2020 
+
+**22 November 2020**
 fix bug (v1.1)
-#20 November 2020
+
+**20 November 2020**
 first created (v1.0)
-#19 November 2020
+
+**19 November 2020**
 Beta version
