@@ -11,6 +11,7 @@ Demo :
 ![asciicast](https://media.giphy.com/media/xZqamKL9CVqJwBKUCn/giphy.gif)
 
 Update History :
+
 **04 Desember 2020**
  Revise logo with urland permission in splash screen and fix bug in splash screen (v1.3)
  
