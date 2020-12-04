@@ -87,7 +87,7 @@ class MainGame : AppCompatActivity(), IControllerNya {
             reset()
         }
     }
-
+    //Animasi Random Pada Suitnya
     private fun animationRandLoop() {
         mutableListOf(backAll[3], backAll[4], backAll[5])
                 .forEachIndexed { _, i ->
@@ -108,7 +108,7 @@ class MainGame : AppCompatActivity(), IControllerNya {
             }
         }, randDuration)
     }
-
+    //Pemrosesan Data
     private fun dataModel() {
 
         val dataMauPlayer = ModelNya(dataPlayer)
@@ -117,30 +117,14 @@ class MainGame : AppCompatActivity(), IControllerNya {
         controller.compProcess()
         controller.compareData()
     }
-
+    //Button di lock ketika di proses
     private fun lockButton() {
         buttonAll[0].isEnabled = false
         buttonAll[1].isEnabled = false
         buttonAll[2].isEnabled = false
         Log.i("MainGame", "di Lock yekkk ga bisa main kapok kon")
     }
-
-    private fun unlockButton() {
-        if (!buttonAll[0].isEnabled) {
-            buttonAll[0].isEnabled = true
-            Log.i("MainGame", "Cieee bisa buka batu")
-            if (!buttonAll[1].isEnabled) {
-                buttonAll[1].isEnabled = true
-                Log.i("MainGame", "Cieee bisa buka gunting")
-                if (!buttonAll[2].isEnabled) {
-                    buttonAll[2].isEnabled = true
-                    Log.i("MainGame", "Cieee bisa buka kertas")
-                }
-            }
-
-        }
-    }
-
+    //Reset semua
     private fun reset() {
         mutableListOf(
                 backAll[0], backAll[1], backAll[2],
@@ -164,7 +148,23 @@ class MainGame : AppCompatActivity(), IControllerNya {
         buttonAll[3].animate().alpha(0f).scaleX(0.5f).scaleY(0.5f).rotation(180f).setDuration(1000)
                 .start()
     }
+    // Setelah reset di unlock
+    private fun unlockButton() {
+        if (!buttonAll[0].isEnabled) {
+            buttonAll[0].isEnabled = true
+            Log.i("MainGame", "Cieee bisa buka batu")
+            if (!buttonAll[1].isEnabled) {
+                buttonAll[1].isEnabled = true
+                Log.i("MainGame", "Cieee bisa buka gunting")
+                if (!buttonAll[2].isEnabled) {
+                    buttonAll[2].isEnabled = true
+                    Log.i("MainGame", "Cieee bisa buka kertas")
+                }
+            }
 
+        }
+    }
+    //Animasi Random dari Computer
     override fun randAnim(animResult: String) {
         when (animResult) {
             "batu" -> {
@@ -183,8 +183,7 @@ class MainGame : AppCompatActivity(), IControllerNya {
         randNum++
         animationRandLoop()
     }
-
-
+    //Hasil dari Randomnya computer
     override fun resultRandom(resultRand: String) {
         when (resultRand) {
             "batu" -> backAll[3].visibility = View.VISIBLE
@@ -192,7 +191,7 @@ class MainGame : AppCompatActivity(), IControllerNya {
             "kertas" -> backAll[5].visibility = View.VISIBLE
         }
     }
-
+    //Menampilkan hasil dari kalah atau menang
     override fun result(resultNya: String) {
         resultImg[0].animate().alpha(0f).scaleX(0.5f).scaleY(0.5f).setDuration(0).start()
         when (resultNya) {
