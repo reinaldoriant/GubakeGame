@@ -12,6 +12,9 @@ Demo :
 
 Update History :
 
+**06 Desember 2020**
+ Add Main Menu and template vs player (v1.4)
+ 
 **04 Desember 2020**
  Revise logo with urland permission in splash screen and fix bug in splash screen (v1.3)
  
