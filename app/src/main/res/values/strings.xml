@@ -8,4 +8,11 @@
     <string name="versus_image">versus_image</string>
     <string name="refresh_icon">refresh_icon</string>
     <string name="logo_font">Logo</string>
+    <string name="vs_play">Bermain suit melawan sesama pemain.</string>
+    <string name="vs_comp">Bermain suit melawan komputer.</string>
+    <string name="name_player">Tuliskan namamu di bawah</string>
+    <string name="vs_player">vs Pemain</string>
+    <string name="vs_computer">vs CPU</string>
+    <string name="choose_enemy">PILIH LAWANMU</string>
+
 </resources>

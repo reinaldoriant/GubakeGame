@@ -1,4 +1,4 @@
-package com.example.kertasguntingbatu
+package com.example.kertasguntingbatu.maingamecomp
 
 import android.os.Bundle
 import android.os.Handler
@@ -12,9 +12,10 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
+import com.example.kertasguntingbatu.R
 
 
-class MainGame : AppCompatActivity(), IControllerNya {
+class MainGameComputer : AppCompatActivity(), IControllerNya {
     private var dataPlayer = ""
     private val setImage by lazy {
         findViewById<ImageView>(R.id.imageBattle)
@@ -38,7 +39,7 @@ class MainGame : AppCompatActivity(), IControllerNya {
                 findViewById(R.id.imageCompWin), findViewById(R.id.imageDraw)
         )
     }
-    private val controller = ControllerNya(this)
+    private val controller = ControllerNyaComp(this)
     private val randDuration = 200L
     private var randNum = 0
 
@@ -47,7 +48,7 @@ class MainGame : AppCompatActivity(), IControllerNya {
         val animation: Animation = AnimationUtils.loadAnimation(this, R.anim.bounce)
         supportActionBar?.hide()
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_maingame)
+        setContentView(R.layout.activity_maingame_comp)
         reset()
         val butNya = mutableListOf(
                 buttonAll[0], buttonAll[1], buttonAll[2],
@@ -111,7 +112,7 @@ class MainGame : AppCompatActivity(), IControllerNya {
     //Pemrosesan Data
     private fun dataModel() {
 
-        val dataMauPlayer = ModelNya(dataPlayer)
+        val dataMauPlayer = ModelNyaComp(dataPlayer)
         Log.i("MainActivity", "Proses Suit Computer vs Pemain")
         controller.setDataPlayer(dataMauPlayer)
         controller.compProcess()

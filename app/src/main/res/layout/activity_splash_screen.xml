@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#cce7e8"
+    android:background="@color/backgroundAll"
     android:orientation="vertical"
     tools:context=".SplashScreen">
 
@@ -36,44 +36,17 @@
 
         <ImageView
             android:id="@+id/rockImage"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
             android:layout_marginTop="0dp"
             android:contentDescription="@string/rock_icon"
-            android:src="@drawable/ic_batu_but"
+            android:src="@drawable/ic_logo_splashscreen"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.527"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/paperImage"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_marginStart="80dp"
-            android:layout_marginLeft="80dp"
-            android:layout_marginBottom="200dp"
-            android:contentDescription="@string/paper_icon"
-            android:src="@drawable/ic_paper_but"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/scissorsImage"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/rockImage"
-            app:layout_constraintVertical_bias="0.0" />
 
-        <ImageView
-            android:id="@+id/scissorsImage"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_marginEnd="80dp"
-            android:layout_marginRight="80dp"
-            android:contentDescription="@string/scissors_icon"
-            android:src="@drawable/ic_scissors_but"
-            app:layout_constraintBottom_toBottomOf="@+id/paperImage"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/paperImage"
-            app:layout_constraintTop_toBottomOf="@+id/rockImage" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
