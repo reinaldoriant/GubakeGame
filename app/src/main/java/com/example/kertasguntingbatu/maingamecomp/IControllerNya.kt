@@ -1,4 +1,4 @@
-package com.example.kertasguntingbatu
+package com.example.kertasguntingbatu.maingamecomp
 
 interface IControllerNya {
     fun resultRandom(resultRand:String)

@@ -1,15 +1,14 @@
-package com.example.kertasguntingbatu
+package com.example.kertasguntingbatu.maingamecomp
 
 import android.util.Log
 
 
-
-class ControllerNya(private val listener: IControllerNya) {
-    private var dataPlayer: ModelNya? = null
+class ControllerNyaComp(private val listener: IControllerNya) {
+    private var dataPlayer: ModelNyaComp? = null
     private var dataCompRand = arrayListOf("batu", "kertas", "gunting","kertas", "batu", "gunting","gunting", "batu", "kertas")
     private var compRandData = dataCompRand.random()
 
-    fun setDataPlayer(dataPlayer: ModelNya) {
+    fun setDataPlayer(dataPlayer: ModelNyaComp) {
         this.dataPlayer = dataPlayer
     }
 
