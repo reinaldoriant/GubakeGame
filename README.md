@@ -12,9 +12,8 @@ Demo :
 
 Update History :
 
-**08 Desember 2020**
-Add player vs player feature. Change player vs CPU feature. Change  data compare from  (player vs player and player vs cpu) feature. 
-Add dialog custom (v1.5)
+**09 Desember 2020**
+Modify player vs CPU feature. Change  data compare from  (player vs player and player vs cpu) feature(v1.5)
 
 **06 Desember 2020**
  Add Main Menu and template vs player (v1.4)
