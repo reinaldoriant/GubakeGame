@@ -19,5 +19,6 @@
     <string name="back_menu">Kembali Ke Menu</string>
     <string name="text_result_game">Hasil Permainan</string>
     <string name="close">close but</string>
+    <string name="Player2">"Player 2"</string>
 
 </resources>

@@ -12,7 +12,7 @@
         android:roundIcon="@drawable/ic_logo_backup"
         android:supportsRtl="true"
         android:theme="@style/Theme.FullScreen">
-        <activity android:name=".playgame.MainGamePlayer"></activity>
+
         <activity android:name=".MainMenu">
 
             <intent-filter>
@@ -27,11 +27,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".playgame.MainGameComputer">
+        <activity android:name=".playGame.MainGamePlayer">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+
+        </activity>
+        <activity android:name=".playGame.MainGameComputer">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>
