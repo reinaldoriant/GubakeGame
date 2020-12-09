@@ -14,6 +14,7 @@ Update History :
 
 **09 Desember 2020**
 Modify player vs CPU feature. Change  data compare from  (player vs player and player vs cpu) feature(v1.5)
+add player vs player feature(v1.6)
 
 **06 Desember 2020**
  Add Main Menu and template vs player (v1.4)
