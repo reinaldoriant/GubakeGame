@@ -14,5 +14,10 @@
     <string name="vs_player">vs Pemain</string>
     <string name="vs_computer">vs CPU</string>
     <string name="choose_enemy">PILIH LAWANMU</string>
+    <string name="text_winner">MENANG!</string>
+    <string name="return_play">Main Lagi</string>
+    <string name="back_menu">Kembali Ke Menu</string>
+    <string name="text_result_game">Hasil Permainan</string>
+    <string name="close">close but</string>
 
 </resources>
