@@ -4,8 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
-import com.example.kertasguntingbatu.maingamecomp.MainGameComputer
-import com.example.kertasguntingbatu.maingameplayer.MainGamePlayer
+import com.example.kertasguntingbatu.playgame.MainGameComputer
+import com.example.kertasguntingbatu.playgame.MainGamePlayer
 
 class MainMenu : AppCompatActivity() {
     private val buttonPlay by lazy {
@@ -31,10 +31,12 @@ class MainMenu : AppCompatActivity() {
                 when (it) {
                     buttonPlay[0] -> {
                         intent[0]
+                        intent[0].putExtra("NAME", "Aldo")
                         startActivity(intent[0])
                     }
                     buttonPlay[1] -> {
                         intent[1]
+                        intent[1].putExtra("NAME", "Aldo")
                         startActivity(intent[1])
                     }
                 }

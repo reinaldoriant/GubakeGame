@@ -10,6 +10,7 @@
     <color name="backgroundAll">#DDE9F6</color>
     <color name="dot_inactive_screen">#93c6fd</color>
     <color name="dot_active_screen">#2278d4</color>
-
+    <color name="green">#4AE12B</color>
+    <color name="orange">#ECA311</color>
 
 </resources>

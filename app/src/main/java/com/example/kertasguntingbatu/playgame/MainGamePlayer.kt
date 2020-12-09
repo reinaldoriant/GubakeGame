@@ -1,4 +1,4 @@
-package com.example.kertasguntingbatu.maingameplayer
+package com.example.kertasguntingbatu.playgame
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,6 +7,6 @@ import com.example.kertasguntingbatu.R
 class MainGamePlayer : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_maingame_player)
+        setContentView(R.layout.activity_maingame)
     }
 }
