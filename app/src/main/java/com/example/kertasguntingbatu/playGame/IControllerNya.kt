@@ -1,7 +1,7 @@
-package com.example.kertasguntingbatu.playgame
+package com.example.kertasguntingbatu.playGame
 
 interface IControllerNya {
-    fun resultEnemy(resultRand:String)
+    fun resultEnemy(resultEnemy:String)
     fun resultWinner(resultNya:String)
     fun randAnim(animResult:String)
 }

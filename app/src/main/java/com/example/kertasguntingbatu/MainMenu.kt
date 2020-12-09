@@ -4,8 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
-import com.example.kertasguntingbatu.playgame.MainGameComputer
-import com.example.kertasguntingbatu.playgame.MainGamePlayer
+import com.example.kertasguntingbatu.playGame.MainGameComputer
+import com.example.kertasguntingbatu.playGame.MainGamePlayer
 
 class MainMenu : AppCompatActivity() {
     private val buttonPlay by lazy {

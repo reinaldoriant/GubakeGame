@@ -1,4 +1,4 @@
-package com.example.kertasguntingbatu.playgame
+package com.example.kertasguntingbatu.playGame
 
 import android.content.Intent
 import android.os.Bundle
@@ -187,8 +187,8 @@ class MainGameComputer : AppCompatActivity(), IControllerNya {
     }
 
     //Hasil dari Randomnya computer
-    override fun resultEnemy(resultRand: String) {
-        when (resultRand) {
+    override fun resultEnemy(resultEnemy: String) {
+        when (resultEnemy) {
             "batu" -> {
                 enemyNya = buttonAll[3]
                 backgroundAll[3].visibility = View.VISIBLE

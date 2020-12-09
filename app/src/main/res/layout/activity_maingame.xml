@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/backgroundAll"
     android:orientation="vertical"
-    tools:context=".playgame.MainGameComputer">
+    tools:context=".playGame.MainGameComputer">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -20,13 +20,13 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:background="@drawable/ic_close_but"
+            android:contentDescription="@string/close"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            android:contentDescription="@string/close" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <ImageView
             android:id="@+id/textView"
@@ -41,8 +41,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-      />
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -66,8 +65,7 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="0dp"
                 android:layout_marginEnd="24dp"
-                android:text="@string/player1"
-                android:textColor="#03A9F4"
+                android:textColor="#00BCD4"
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
@@ -175,7 +173,6 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="0dp"
                 android:layout_marginEnd="24dp"
-                android:text="@string/computer"
                 android:textColor="#00BCD4"
                 android:textSize="25sp"
                 android:textStyle="bold" />
