@@ -24,6 +24,7 @@ class MainGameComputer : AppCompatActivity(), IControllerNya {
     private val resetFun by lazy {
         findViewById<ImageView>(R.id.imageBattle)
     }
+    private val intentDialog = Intent(this, MainMenu::class.java)
     private var enemyNya: ImageButton? = null
     private val textName by lazy { findViewById<TextView>(R.id.player1) }
     private val backgroundAll by lazy {
@@ -49,7 +50,7 @@ class MainGameComputer : AppCompatActivity(), IControllerNya {
     /*private var randomCompCl = RandomComp()*/
     override fun onCreate(savedInstanceState: Bundle?) {
         val animation: Animation = AnimationUtils.loadAnimation(this, R.anim.bounce)
-        namePlay = intent.getStringExtra("Name").toString()
+        namePlay = intent.getStringExtra("dataName").toString()
         textName?.text = namePlay
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maingame)
@@ -234,8 +235,9 @@ class MainGameComputer : AppCompatActivity(), IControllerNya {
                 dialogD1.dismiss()
             }
             backMenu.setOnClickListener {
-                val intentDialog = Intent(this, MainMenu::class.java)
+                intentDialog.putExtra("dataName", namePlay)
                 startActivity(intentDialog)
+
             }
             dialogD1.show()
         }, 2 * randDuration
@@ -243,13 +245,13 @@ class MainGameComputer : AppCompatActivity(), IControllerNya {
         )
         Log.i("MainActivity", "pemenangnya : $resultNya")
     }
-
     override fun onBackPressed() {
-        val snackbar =
+        val snackComp =
                 Snackbar.make(layoutImage, "Apakah ingin keluar?", Snackbar.LENGTH_SHORT)
-        snackbar.setAction("Keluar") {
-            snackbar.dismiss()
+        snackComp.setAction("Keluar") {
+            snackComp.dismiss()
             finish()
+            intentDialog.putExtra("dataName", namePlay)
         }.show()
     }
 }

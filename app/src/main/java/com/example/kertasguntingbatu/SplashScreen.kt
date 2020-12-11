@@ -8,6 +8,7 @@ import android.os.Looper
 import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.example.kertasguntingbatu.slidePage.SlidePage
 
 
 class SplashScreen : AppCompatActivity() {
@@ -15,13 +16,13 @@ class SplashScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
         Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this@SplashScreen, MainMenu::class.java)
+            val intent = Intent(this@SplashScreen, SlidePage::class.java)
             startActivity(intent)
         }, 3000)
         val placeLogo = findViewById<ImageView>(R.id.logoImage)
         val imgLogo = "https://i.ibb.co/HC5ZPgD/splash-screen1.png"
         Glide.with(this)
-                .load(imgLogo).error(R.drawable.ic_logo_backup)
+                .load(imgLogo)
                 .apply(RequestOptions()
                         .placeholder(R.drawable.ic_logo_backup).centerCrop()
                 ).into(placeLogo)

@@ -26,19 +26,29 @@ class MainGamePlayer : AppCompatActivity(), IControllerNya {
         findViewById<ImageView>(R.id.imageBattle)
     }
     private var enemyNya: ImageButton? = null
-    private val textName by lazy { mutableListOf(findViewById<TextView>(R.id.player1),findViewById(R.id.player2)) }
+    private val textName by lazy {
+        mutableListOf(
+            findViewById<TextView>(R.id.player1),
+            findViewById(R.id.player2)
+        )
+    }
     private val backgroundAll by lazy {
         mutableListOf(
-                findViewById<FrameLayout>(R.id.backgroundBatu), findViewById(R.id.backgroundScissors),
-                findViewById(R.id.backgroundPaper), findViewById(R.id.backgroundBatuComp),
-                findViewById(R.id.backgroundScissorsComp), findViewById(R.id.backgroundPaperComp),
+            findViewById<FrameLayout>(R.id.backgroundBatu), findViewById(R.id.backgroundScissors),
+            findViewById(R.id.backgroundPaper), findViewById(R.id.backgroundBatuComp),
+            findViewById(R.id.backgroundScissorsComp), findViewById(R.id.backgroundPaperComp),
         )
     }
     private val buttonAll by lazy {
         mutableListOf(
-                findViewById(R.id.batuPlayer), findViewById(R.id.scissorsPlayer),
-                findViewById(R.id.paperPlayer), findViewById(R.id.batuComp), findViewById(R.id.scissorsComp),
-                findViewById(R.id.paperComp), findViewById(R.id.refreshBut), findViewById<ImageButton>(R.id.but_close)
+            findViewById(R.id.batuPlayer),
+            findViewById(R.id.scissorsPlayer),
+            findViewById(R.id.paperPlayer),
+            findViewById(R.id.batuComp),
+            findViewById(R.id.scissorsComp),
+            findViewById(R.id.paperComp),
+            findViewById(R.id.refreshBut),
+            findViewById<ImageButton>(R.id.but_close)
         )
     }
     private val controller = ControllerNya(this)
@@ -46,14 +56,15 @@ class MainGamePlayer : AppCompatActivity(), IControllerNya {
     private var namePlay: String = "Pemain 1"
     override fun onCreate(savedInstanceState: Bundle?) {
         val animation: Animation = AnimationUtils.loadAnimation(this, R.anim.bounce)
-        namePlay = intent.getStringExtra("Name").toString()
+        namePlay = intent.getStringExtra("dataName").toString()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maingame)
         textName[0]?.text = namePlay
         textName[1].text = getString(R.string.Player2)
         reset()
         val butNya = mutableListOf(
-                buttonAll[0], buttonAll[1], buttonAll[2], buttonAll[3], buttonAll[4], buttonAll[5])
+            buttonAll[0], buttonAll[1], buttonAll[2], buttonAll[3], buttonAll[4], buttonAll[5]
+        )
         butNya.forEachIndexed { _, imageButton ->
             imageButton.setOnClickListener {
                 when (it) {
@@ -101,19 +112,24 @@ class MainGamePlayer : AppCompatActivity(), IControllerNya {
                         dataPlayer2 = "kertas"
                     }
                 }
-                if(dataPlayer1!="" && dataPlayer2!=""){
+                if (dataPlayer1 != "" && dataPlayer2 != "") {
                     lockButtonPlay1()
                     lockButtonPlay2()
                 }
 
-                if(dataPlayer1!=""&&dataPlayer2!=""){
-                    Toast.makeText(this, "$namePlay Memilih $dataPlayer1", Toast.LENGTH_SHORT).show()
+                if (dataPlayer1 != "" && dataPlayer2 != "") {
+                    Toast.makeText(this, "$namePlay Memilih $dataPlayer1", Toast.LENGTH_SHORT)
+                        .show()
                     dataModel()
                     resetFun.animate().alpha(0f).scaleX(0.5f).scaleY(0.5f).setDuration(500).start()
-                    buttonAll[7].animate().alpha(0f).scaleX(0.5f).scaleY(0.5f).setDuration(500).start()
+                    buttonAll[7].animate().alpha(0f).scaleX(0.5f).scaleY(0.5f).setDuration(500)
+                        .start()
                 }
                 /*Toast.makeText(this, "$namePlay Memilih $dataPlayer1", Toast.LENGTH_SHORT).show()*/
-                Log.i("MainActivity", "$namePlay memilih $dataPlayer1 dan Player 2 memilih $dataPlayer2 ")
+                Log.i(
+                    "MainActivity",
+                    "$namePlay memilih $dataPlayer1 dan Player 2 memilih $dataPlayer2 "
+                )
 
             }
         }
@@ -153,7 +169,8 @@ class MainGamePlayer : AppCompatActivity(), IControllerNya {
     //unlock button semua
     private fun unlockButton() {
         if (!buttonAll[0].isEnabled && !buttonAll[1].isEnabled && !buttonAll[2].isEnabled &&
-                !buttonAll[3].isEnabled && !buttonAll[4].isEnabled && !buttonAll[5].isEnabled) {
+            !buttonAll[3].isEnabled && !buttonAll[4].isEnabled && !buttonAll[5].isEnabled
+        ) {
             buttonAll[0].isEnabled = true
             Log.i("MainGame", "Cieee bisa buka batu")
             buttonAll[1].isEnabled = true
@@ -172,7 +189,12 @@ class MainGamePlayer : AppCompatActivity(), IControllerNya {
     //Reset semua
     private fun reset() {
         mutableListOf(
-                backgroundAll[0], backgroundAll[1], backgroundAll[2], backgroundAll[3], backgroundAll[4], backgroundAll[5],
+            backgroundAll[0],
+            backgroundAll[1],
+            backgroundAll[2],
+            backgroundAll[3],
+            backgroundAll[4],
+            backgroundAll[5],
         ).forEachIndexed { _, i ->
             if (i.isVisible) {
                 i.visibility = View.INVISIBLE
@@ -224,36 +246,36 @@ class MainGamePlayer : AppCompatActivity(), IControllerNya {
             }
         }
         Log.e("MainGame", "pemenangnya $winner")
-        Handler(Looper.getMainLooper()).postDelayed({
-            val view = LayoutInflater.from(this).inflate(R.layout.activity_dialog, null, false)
-            val dialogBuilder = AlertDialog.Builder(this)
-            dialogBuilder.setView(view)
-            val dialogD1 = dialogBuilder.create()
-            dialogD1.setCancelable(false)
-            val winnerInfo by lazy { view.findViewById<TextView>(R.id.winner) }
-            val playAgain by lazy { view.findViewById<Button>(R.id.play_again) }
-            val backMenu by lazy { view.findViewById<Button>(R.id.back_menu) }
-            winnerInfo.text = winner
-            playAgain.setOnClickListener {
-                reset()
-                dialogD1.dismiss()
-            }
-            backMenu.setOnClickListener {
-                val intentDialog = Intent(this, MainMenu::class.java)
-                startActivity(intentDialog)
-            }
-            dialogD1.show()
-        }, 2 * randDuration
+        Handler(Looper.getMainLooper()).postDelayed(
+            {
+                val view = LayoutInflater.from(this).inflate(R.layout.activity_dialog, null, false)
+                val dialogBuilder = AlertDialog.Builder(this)
+                dialogBuilder.setView(view)
+                val dialogD1 = dialogBuilder.create()
+                dialogD1.setCancelable(false)
+                val winnerInfo by lazy { view.findViewById<TextView>(R.id.winner) }
+                val playAgain by lazy { view.findViewById<Button>(R.id.play_again) }
+                val backMenu by lazy { view.findViewById<Button>(R.id.back_menu) }
+                winnerInfo.text = winner
+                playAgain.setOnClickListener {
+                    reset()
+                    dialogD1.dismiss()
+                }
+                backMenu.setOnClickListener {
+                    val intentDialog = Intent(this, MainMenu::class.java)
+                    startActivity(intentDialog)
+                }
+                dialogD1.show()
+            }, 2 * randDuration
 
         )
         Log.i("MainActivity", "pemenangnya : $resultNya")
     }
 
     override fun onBackPressed() {
-        val snackbar =
-                Snackbar.make(layoutImage, "Apakah ingin keluar?", Snackbar.LENGTH_SHORT)
-        snackbar.setAction("Keluar") {
-            snackbar.dismiss()
+        val snackPlayer= Snackbar.make(layoutImage, "Apakah ingin keluar?", Snackbar.LENGTH_SHORT)
+        snackPlayer.setAction("Keluar") {
+            snackPlayer.dismiss()
             finish()
         }.show()
     }
