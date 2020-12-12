@@ -2,7 +2,7 @@
     <string name="app_name">Kertas Gunting Batu</string>
     <string name="scissors_icon">gunting computer</string>
     <string name="player1">Player1</string>
-    <string name="computer">Comp</string>
+    <string name="computer">CPU</string>
     <string name="rock_icon">rock_icon</string>
     <string name="paper_icon">paper_icon</string>
     <string name="versus_image">versus_image</string>
