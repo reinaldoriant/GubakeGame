@@ -12,29 +12,29 @@ Demo :
 
 Update History :
 
-**12 Desember 2020**
-fix bug name data
+**12 Desember 2020** :
+fix bug name data (v1.8)
 
-**11 Desember 2020**
+**11 Desember 2020** :
 Add Slide page and snack bar in Main Menu(V1.7)
 
-**09 Desember 2020**
+**09 Desember 2020** :
 Modify player vs CPU feature. Change  data compare from  (player vs player and player vs cpu) feature(v1.5)
 add player vs player feature(v1.6)
 
-**06 Desember 2020**
+**06 Desember 2020** :
  Add Main Menu and template vs player (v1.4)
  
-**04 Desember 2020**
+**04 Desember 2020** :
  Revise logo with url and permission in splash screen and fix bug in splash screen (v1.3)
  
-**23 November 2020**
+**23 November 2020** :
 add layout v26 and fix bug (v1.2)
 
 **22 November 2020**
-fix bug (v1.1)
+fix bug (v1.1)  :
 
-**20 November 2020**
+**20 November 2020** :
 first created (v1.0)
 
 **19 November 2020**
