@@ -31,11 +31,11 @@ add player vs player feature(v1.6)
 **23 November 2020** :
 add layout v26 and fix bug (v1.2)
 
-**22 November 2020**
-fix bug (v1.1)  :
+**22 November 2020** :
+fix bug (v1.1)  
 
 **20 November 2020** :
 first created (v1.0)
 
-**19 November 2020**
+**19 November 2020** :
 Beta version
