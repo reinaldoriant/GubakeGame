@@ -24,9 +24,8 @@ class MainGameComputer : AppCompatActivity(), IControllerNya {
     private val resetFun by lazy {
         findViewById<ImageView>(R.id.imageBattle)
     }
-    private val intentDialog = Intent(this, MainMenu::class.java)
+    private val intentDialog by lazy{ Intent(this, MainMenu::class.java)}
     private var enemyNya: ImageButton? = null
-    private val textName by lazy { findViewById<TextView>(R.id.player1) }
     private val backgroundAll by lazy {
         mutableListOf(
                 findViewById<FrameLayout>(R.id.backgroundBatu), findViewById(R.id.backgroundScissors),
@@ -41,20 +40,29 @@ class MainGameComputer : AppCompatActivity(), IControllerNya {
                 findViewById(R.id.paperComp), findViewById(R.id.refreshBut), findViewById<ImageButton>(R.id.but_close)
         )
     }
+    private val textName by lazy {
+        mutableListOf(
+                findViewById<TextView>(R.id.player1),
+                findViewById(R.id.player2)
+        )
+    }
     private val controller = ControllerNya(this)
     private val randDuration = 1000L
-    private val animRand= 100L
+    private val animRand = 100L
     private var randNum = 0
+    private var name = mutableListOf<String>()
     private var namePlay: String = "Pemain 1"
 
     /*private var randomCompCl = RandomComp()*/
     override fun onCreate(savedInstanceState: Bundle?) {
         val animation: Animation = AnimationUtils.loadAnimation(this, R.anim.bounce)
-        namePlay = intent.getStringExtra("dataName").toString()
-        textName?.text = namePlay
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maingame)
         reset()
+        namePlay = intent.getStringExtra("dataName").toString()
+        name.add(namePlay)
+        textName[0]?.text = name[0]
+        textName[1]?.text =getString(R.string.computer)
         val butNya = mutableListOf(
                 buttonAll[0], buttonAll[1], buttonAll[2],
         )
@@ -235,7 +243,7 @@ class MainGameComputer : AppCompatActivity(), IControllerNya {
                 dialogD1.dismiss()
             }
             backMenu.setOnClickListener {
-                intentDialog.putExtra("dataName", namePlay)
+                intentDialog.putExtra("dataName", name[0])
                 startActivity(intentDialog)
 
             }
@@ -245,13 +253,12 @@ class MainGameComputer : AppCompatActivity(), IControllerNya {
         )
         Log.i("MainActivity", "pemenangnya : $resultNya")
     }
+
     override fun onBackPressed() {
-        val snackComp =
-                Snackbar.make(layoutImage, "Apakah ingin keluar?", Snackbar.LENGTH_SHORT)
+        val snackComp = Snackbar.make(layoutImage, "Apakah ingin keluar?", Snackbar.LENGTH_SHORT)
         snackComp.setAction("Keluar") {
             snackComp.dismiss()
             finish()
-            intentDialog.putExtra("dataName", namePlay)
         }.show()
     }
 }
