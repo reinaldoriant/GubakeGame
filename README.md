@@ -13,7 +13,10 @@ Demo :
 Update History :
 
 **12 Desember 2020**
-Add Slide page and snack bar in Main Menu
+fix bug name data
+
+**11 Desember 2020**
+Add Slide page and snack bar in Main Menu(V1.7)
 
 **09 Desember 2020**
 Modify player vs CPU feature. Change  data compare from  (player vs player and player vs cpu) feature(v1.5)
