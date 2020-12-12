@@ -12,8 +12,11 @@ Demo :
 
 Update History :
 
+
+
 **12 Desember 2020** :
 fix bug name data (v1.8)
+fix snackbar's bug in main menu and splash screen
 
 **11 Desember 2020** :
 Add Slide page and snack bar in Main Menu(V1.7)
