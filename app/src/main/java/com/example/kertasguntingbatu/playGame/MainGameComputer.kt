@@ -48,7 +48,7 @@ class MainGameComputer : AppCompatActivity(), IControllerNya {
     }
     private val controller = ControllerNya(this)
     private val randDuration = 1000L
-    private val animRand = 100L
+    private val animRand = 200L
     private var randNum = 0
     private var name = mutableListOf<String>()
     private var namePlay: String = "Pemain 1"

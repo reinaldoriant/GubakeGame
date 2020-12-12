@@ -1,7 +1,10 @@
 package com.example.kertasguntingbatu
 
+import android.R.id.message
 import android.content.Intent
+import android.nfc.Tag
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import com.example.kertasguntingbatu.playGame.MainGameComputer
@@ -13,24 +16,24 @@ import kotlinx.android.synthetic.main.activity_main_menu.*
 class MainMenu : AppCompatActivity() {
     private val buttonPlay by lazy {
         mutableListOf(
-            findViewById<ImageButton>(R.id.butPlayVsPlay), findViewById(R.id.butPlayVsComp)
+                findViewById<ImageButton>(R.id.butPlayVsPlay), findViewById(R.id.butPlayVsComp)
         )
     }
     private val intentNya by lazy {
         mutableListOf(
-            Intent(this@MainMenu, MainGamePlayer::class.java),
-            Intent(this@MainMenu, MainGameComputer::class.java)
+                Intent(this@MainMenu, MainGamePlayer::class.java),
+                Intent(this@MainMenu, MainGameComputer::class.java)
         )
     }
-    private var namePlay:String="Pemain1"
+    private var namePlay: String = "Pemain1"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_menu)
         namePlayerComp.text = intent.extras?.getString("dataName")
         namePlayerPlayer.text = intent.extras?.getString("dataName")
-        namePlay= intent.extras?.getString("dataName").toString()
+        namePlay = intent.extras?.getString("dataName").toString()
         val butNya = mutableListOf(
-            buttonPlay[0], buttonPlay[1]
+                buttonPlay[0], buttonPlay[1]
         )
         butNya.forEachIndexed { _, imageButton ->
             imageButton.setOnClickListener {
@@ -48,14 +51,15 @@ class MainMenu : AppCompatActivity() {
                 }
             }
         }
+
     }
 
-    override fun onResume() {
-        super.onResume()
-        val snackPlayer= Snackbar.make(mainMenu, "Selamat Datang $namePlay", Snackbar.LENGTH_SHORT)
-        snackPlayer.setAction("Tutup") {
+    override fun onStart() {
+        super.onStart()
+        val snackPlayer = Snackbar.make(mainMenu, "Selamat Datang $namePlay", Snackbar.LENGTH_INDEFINITE)
+        snackPlayer.setAction("Tutup"){
             snackPlayer.dismiss()
-            finish()
         }.show()
+        Log.i("MainMenu","OnStart")
     }
 }

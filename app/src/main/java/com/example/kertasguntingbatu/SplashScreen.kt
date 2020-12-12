@@ -1,15 +1,15 @@
 package com.example.kertasguntingbatu
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
 import com.example.kertasguntingbatu.slidePage.SlidePage
 
+private var animDuration = 1000L
 
 class SplashScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,9 +22,15 @@ class SplashScreen : AppCompatActivity() {
         val placeLogo = findViewById<ImageView>(R.id.logoImage)
         val imgLogo = "https://i.ibb.co/HC5ZPgD/splash-screen1.png"
         Glide.with(this)
-                .load(imgLogo)
-                .apply(RequestOptions()
-                        .placeholder(R.drawable.ic_logo_backup).centerCrop()
-                ).into(placeLogo)
+                .load(imgLogo).error(R.drawable.ic_logo_image)
+                .into(placeLogo)
+        placeLogo.animate().rotation(-45f).setDuration(500).start()
+        Handler(Looper.getMainLooper()).postDelayed({
+            placeLogo.animate().rotation(45f).setDuration(500).start()
+        }, 500)
+        Handler(Looper.getMainLooper()).postDelayed({
+            placeLogo.animate().rotation(0f).setDuration(500).start()
+        }, animDuration)
+
     }
 }
