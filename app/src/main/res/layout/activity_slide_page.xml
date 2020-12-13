@@ -42,7 +42,7 @@
         app:selectedDotColor="@color/blue_view_page" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/btnNameInput"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:background="@drawable/ic_next"
