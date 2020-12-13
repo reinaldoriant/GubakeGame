@@ -13,12 +13,15 @@ import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
+import com.bumptech.glide.Glide
 import com.example.kertasguntingbatu.MainMenu
 import com.example.kertasguntingbatu.R
 import com.google.android.material.snackbar.Snackbar
+import kotlinx.android.synthetic.main.activity_maingame.*
 
 
 class MainGamePlayer : AppCompatActivity(), IControllerNya {
+    private val imgLogo = "https://i.ibb.co/HC5ZPgD/splash-screen1.png"
     private var dataPlayer1 = ""
     private var dataPlayer2 = ""
     private val layoutImage: LinearLayout by lazy { findViewById(R.id.activity_maingame) }
@@ -57,12 +60,15 @@ class MainGamePlayer : AppCompatActivity(), IControllerNya {
     private var name = mutableListOf<String>()
     private var namePlay: String = "Pemain 1"
     override fun onCreate(savedInstanceState: Bundle?) {
-        val animation: Animation = AnimationUtils.loadAnimation(this, R.anim.bounce)
-        namePlay = intent.getStringExtra("dataName").toString()
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_maingame)
         namePlay = intent.getStringExtra("dataName").toString()
         name.add(namePlay)
-        setContentView(R.layout.activity_maingame)
+        val animation: Animation = AnimationUtils.loadAnimation(this, R.anim.bounce)
+        namePlay = intent.getStringExtra("dataName").toString()
+        Glide.with(this)
+                .load(imgLogo).error(R.drawable.ic_logo_image)
+                .into(logoImageGame)
         textName[0]?.text = namePlay
         textName[1].text = getString(R.string.Player2)
         reset()
@@ -129,26 +135,24 @@ class MainGamePlayer : AppCompatActivity(), IControllerNya {
                     buttonAll[7].animate().alpha(0f).scaleX(0.5f).scaleY(0.5f).setDuration(500)
                             .start()
                 }
-                /*Toast.makeText(this, "$namePlay Memilih $dataPlayer1", Toast.LENGTH_SHORT).show()*/
-                Log.i(
-                        "MainActivity",
-                        "$namePlay memilih $dataPlayer1 dan Player 2 memilih $dataPlayer2 "
-                )
+                Log.i("MainGamePlayer", "$namePlay memilih $dataPlayer1 dan Player 2 memilih $dataPlayer2 ")
 
             }
         }
         buttonAll[6].setOnClickListener {
             reset()
+            Log.i("MainGamePlayer", "playernya klik reset")
         }
         buttonAll[7].setOnClickListener {
             onBackPressed()
+            Log.i("MainGamePlayer", "playernya klik exit")
         }
     }
 
     //Pemrosesan Data
     private fun dataModel() {
         val dataMauPlayer = ModelNya(dataPlayer1, dataPlayer2, "vsPlayer")
-        Log.i("MainActivity", "Proses Suit Computer vs Pemain")
+        Log.i("MainGamePlayer", "Proses Suit Pemain vs Pemain")
         controller.setDataPlayer(dataMauPlayer)
         controller.chooseEnemy()
         controller.compareData()
@@ -159,14 +163,14 @@ class MainGamePlayer : AppCompatActivity(), IControllerNya {
         buttonAll[0].isEnabled = false
         buttonAll[1].isEnabled = false
         buttonAll[2].isEnabled = false
-        Log.i("MainGame", "di Lock yekkk ga bisa main kapok kon")
+        Log.i("MainGamePlayer", "di Lock yekkk ga bisa main kapok kon")
     }
 
     private fun lockButtonPlay2() {
         buttonAll[3].isEnabled = false
         buttonAll[4].isEnabled = false
         buttonAll[5].isEnabled = false
-        Log.i("MainGame", "di Lock yekkk ga bisa main kapok kon player 2")
+        Log.i("MainGamePlayer", "di Lock yekkk ga bisa main kapok kon player 2")
     }
 
 
@@ -176,17 +180,17 @@ class MainGamePlayer : AppCompatActivity(), IControllerNya {
                 !buttonAll[3].isEnabled && !buttonAll[4].isEnabled && !buttonAll[5].isEnabled
         ) {
             buttonAll[0].isEnabled = true
-            Log.i("MainGame", "Cieee bisa buka batu")
+            Log.i("MainGamePlayer", "Cieee bisa buka batu")
             buttonAll[1].isEnabled = true
-            Log.i("MainGame", "Cieee bisa buka gunting")
+            Log.i("MainGamePlayer", "Cieee bisa buka gunting")
             buttonAll[2].isEnabled = true
-            Log.i("MainGame", "Cieee bisa buka kertas")
+            Log.i("MainGamePlayer", "Cieee bisa buka kertas")
             buttonAll[3].isEnabled = true
-            Log.i("MainGame", "Cieee bisa buka batu player 2")
+            Log.i("MainGamePlayer", "Cieee bisa buka batu player 2")
             buttonAll[4].isEnabled = true
-            Log.i("MainGame", "Cieee bisa buka gunting player 2")
+            Log.i("MainGamePlayer", "Cieee bisa buka gunting player 2")
             buttonAll[5].isEnabled = true
-            Log.i("MainGame", "Cieee bisa buka kertas player 2")
+            Log.i("MainGamePlayer", "Cieee bisa buka kertas player 2")
         }
     }
 
@@ -202,7 +206,7 @@ class MainGamePlayer : AppCompatActivity(), IControllerNya {
         ).forEachIndexed { _, i ->
             if (i.isVisible) {
                 i.visibility = View.INVISIBLE
-                Log.i("MainGame", "Background nya ilang semua")
+                Log.i("MainGamePlayer", "Background nya ilang semua")
             }
         }
         resetFun.animate().alpha(1f).scaleX(1f).scaleY(1f).setDuration(randDuration).start()
@@ -231,7 +235,7 @@ class MainGamePlayer : AppCompatActivity(), IControllerNya {
                 backgroundAll[5].visibility = View.VISIBLE
             }
         }
-        Log.e("MainActivity", "pilihan Pemain 2 $resultEnemy")
+        Log.e("MainGamePlayer", "pilihan Pemain 2 $resultEnemy")
         Toast.makeText(this, "Pemain 2 Memilih $resultEnemy", Toast.LENGTH_SHORT).show()
     }
 
@@ -249,32 +253,29 @@ class MainGamePlayer : AppCompatActivity(), IControllerNya {
                 winner = "SERI!"
             }
         }
-        Log.e("MainGame", "pemenangnya $winner")
-        Handler(Looper.getMainLooper()).postDelayed(
-                {
-                    val view = LayoutInflater.from(this).inflate(R.layout.activity_dialog, null, false)
-                    val dialogBuilder = AlertDialog.Builder(this)
-                    dialogBuilder.setView(view)
-                    val dialogD1 = dialogBuilder.create()
-                    dialogD1.setCancelable(false)
-                    val winnerInfo by lazy { view.findViewById<TextView>(R.id.winner) }
-                    val playAgain by lazy { view.findViewById<Button>(R.id.play_again) }
-                    val backMenu by lazy { view.findViewById<Button>(R.id.back_menu) }
-                    winnerInfo.text = winner
-                    playAgain.setOnClickListener {
-                        reset()
-                        dialogD1.dismiss()
-                    }
-                    backMenu.setOnClickListener {
+        Log.i("MainGamePlayer", "pemenangnya $winner")
+        Handler(Looper.getMainLooper()).postDelayed({
+            val view = LayoutInflater.from(this).inflate(R.layout.activity_dialog, null, false)
+            val dialogBuilder = AlertDialog.Builder(this)
+            dialogBuilder.setView(view)
+            val dialogD1 = dialogBuilder.create()
+            dialogD1.setCancelable(false)
+            val winnerInfo by lazy { view.findViewById<TextView>(R.id.winner) }
+            val playAgain by lazy { view.findViewById<Button>(R.id.play_again) }
+            val backMenu by lazy { view.findViewById<Button>(R.id.back_menu) }
+            winnerInfo.text = winner
+            playAgain.setOnClickListener {
+                reset()
+                dialogD1.dismiss()
+            }
+            backMenu.setOnClickListener {
 
-                        intentDialog.putExtra("dataName", name[0])
-                        startActivity(intentDialog)
-                    }
-                    dialogD1.show()
-                }, 2 * randDuration
-
+                intentDialog.putExtra("dataName", name[0])
+                startActivity(intentDialog)
+            }
+            dialogD1.show()
+        }, 2 * randDuration
         )
-        Log.i("MainActivity", "pemenangnya : $resultNya")
     }
 
     override fun onBackPressed() {
@@ -283,5 +284,6 @@ class MainGamePlayer : AppCompatActivity(), IControllerNya {
             snackPlayer.dismiss()
             finish()
         }.show()
+        Log.i("MainGamePlayer", "Keluar")
     }
 }

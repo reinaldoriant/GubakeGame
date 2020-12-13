@@ -13,18 +13,21 @@ import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
+import com.bumptech.glide.Glide
 import com.example.kertasguntingbatu.MainMenu
 import com.example.kertasguntingbatu.R
 import com.google.android.material.snackbar.Snackbar
+import kotlinx.android.synthetic.main.activity_maingame.*
 
 
 class MainGameComputer : AppCompatActivity(), IControllerNya {
+    private val imgLogo = "https://i.ibb.co/HC5ZPgD/splash-screen1.png"
     private var dataPlayer1 = ""
     private val layoutImage: LinearLayout by lazy { findViewById(R.id.activity_maingame) }
     private val resetFun by lazy {
         findViewById<ImageView>(R.id.imageBattle)
     }
-    private val intentDialog by lazy{ Intent(this, MainMenu::class.java)}
+    private val intentDialog by lazy { Intent(this, MainMenu::class.java) }
     private var enemyNya: ImageButton? = null
     private val backgroundAll by lazy {
         mutableListOf(
@@ -53,16 +56,18 @@ class MainGameComputer : AppCompatActivity(), IControllerNya {
     private var name = mutableListOf<String>()
     private var namePlay: String = "Pemain 1"
 
-    /*private var randomCompCl = RandomComp()*/
     override fun onCreate(savedInstanceState: Bundle?) {
         val animation: Animation = AnimationUtils.loadAnimation(this, R.anim.bounce)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maingame)
+        Glide.with(this)
+                .load(imgLogo).error(R.drawable.ic_logo_image)
+                .into(logoImageGame)
         reset()
         namePlay = intent.getStringExtra("dataName").toString()
         name.add(namePlay)
         textName[0]?.text = name[0]
-        textName[1]?.text =getString(R.string.computer)
+        textName[1]?.text = getString(R.string.computer)
         val butNya = mutableListOf(
                 buttonAll[0], buttonAll[1], buttonAll[2],
         )
@@ -93,7 +98,7 @@ class MainGameComputer : AppCompatActivity(), IControllerNya {
                     }
                 }
                 Toast.makeText(this, "$namePlay Memilih $dataPlayer1", Toast.LENGTH_SHORT).show()
-                Log.i("MainActivity", "$namePlay memilih $dataPlayer1")
+                Log.i("MainGameComputer", "$namePlay memilih $dataPlayer1")
                 lockButton()
                 animationRandLoop()
                 resetFun.animate().alpha(0f).scaleX(0.5f).scaleY(0.5f).setDuration(500).start()
@@ -102,9 +107,11 @@ class MainGameComputer : AppCompatActivity(), IControllerNya {
         }
         buttonAll[6].setOnClickListener {
             reset()
+            Log.i("MainGameComputer", "playernya klik reset")
         }
         buttonAll[7].setOnClickListener {
             onBackPressed()
+            Log.i("MainGameComputer", "playernya klik keluar")
         }
     }
 
@@ -115,14 +122,14 @@ class MainGameComputer : AppCompatActivity(), IControllerNya {
                     Handler(Looper.getMainLooper()).postDelayed({
                         if (i.isVisible) {
                             i.visibility = View.INVISIBLE
-                            Log.i("MainGame", "Hilang Sejenak Background nya Computer")
+                            Log.i("MainGameComputer", "Hilang Sejenak Background nya Computer")
                         }
                     }, animRand)
                 }
         Handler(Looper.getMainLooper()).postDelayed({
             if (randNum <= 35) {
                 controller.compRand()
-                Log.i("MainActivity", "Perulangan Computer #${randNum}")
+                Log.i("MainGameComputer", "Perulangan Computer #${randNum}")
             } else {
                 dataModel()
                 randNum = 0
@@ -133,7 +140,7 @@ class MainGameComputer : AppCompatActivity(), IControllerNya {
     //Pemrosesan Data
     private fun dataModel() {
         val dataMauPlayer = ModelNya(dataPlayer1, "", "vsCPU")
-        Log.i("MainActivity", "Proses Suit Computer vs Pemain")
+        Log.i("MainGameComputer", "Proses Suit Computer vs Pemain")
         controller.setDataPlayer(dataMauPlayer)
         controller.chooseEnemy()
         controller.compareData()
@@ -144,18 +151,18 @@ class MainGameComputer : AppCompatActivity(), IControllerNya {
         buttonAll[0].isEnabled = false
         buttonAll[1].isEnabled = false
         buttonAll[2].isEnabled = false
-        Log.i("MainGame", "di Lock yekkk ga bisa main kapok kon")
+        Log.i("MainGameComputer", "di Lock yekkk ga bisa main kapok kon")
     }
 
     //unlock button semua
     private fun unlockButton() {
         if (!buttonAll[0].isEnabled && !buttonAll[1].isEnabled && !buttonAll[2].isEnabled) {
             buttonAll[0].isEnabled = true
-            Log.i("MainGame", "Cieee bisa buka batu")
+            Log.i("MainGameComputer", "Cieee bisa buka batu")
             buttonAll[1].isEnabled = true
-            Log.i("MainGame", "Cieee bisa buka gunting")
+            Log.i("MainGameComputer", "Cieee bisa buka gunting")
             buttonAll[2].isEnabled = true
-            Log.i("MainGame", "Cieee bisa buka kertas")
+            Log.i("MainGameComputer", "Cieee bisa buka kertas")
         }
     }
 
@@ -166,7 +173,7 @@ class MainGameComputer : AppCompatActivity(), IControllerNya {
         ).forEachIndexed { _, i ->
             if (i.isVisible) {
                 i.visibility = View.INVISIBLE
-                Log.i("MainGame", "Background nya ilang semua")
+                Log.i("MainGameComputer", "Background nya ilang semua")
             }
         }
         resetFun.animate().alpha(1f).scaleX(1f).scaleY(1f).setDuration(randDuration).start()
@@ -180,15 +187,15 @@ class MainGameComputer : AppCompatActivity(), IControllerNya {
         when (animResult) {
             "batu" -> {
                 backgroundAll[3].visibility = View.VISIBLE
-                Log.i("MainGame", "Waw ada batu")
+                Log.i("MainGameComputer", "Acak acak ini batu")
             }
             "gunting" -> {
                 backgroundAll[4].visibility = View.VISIBLE
-                Log.i("MainGame", "Hmm gunting")
+                Log.i("MainGameComputer", "Acak acak ini gunting")
             }
             "kertas" -> {
                 backgroundAll[5].visibility = View.VISIBLE
-                Log.i("MainGame", "Whoa ada kertas")
+                Log.i("MainGameComputer", "Acak acak ini kertas")
             }
         }
         randNum++
@@ -211,6 +218,7 @@ class MainGameComputer : AppCompatActivity(), IControllerNya {
                 backgroundAll[5].visibility = View.VISIBLE
             }
         }
+        Toast.makeText(this, "CPU Memilih $resultEnemy", Toast.LENGTH_SHORT).show()
     }
 
     //Menampilkan hasil dari kalah atau menang
@@ -227,7 +235,7 @@ class MainGameComputer : AppCompatActivity(), IControllerNya {
                 winner = "SERI!"
             }
         }
-        Log.e("MainGame", "pemenangnya $winner")
+        Log.i("MainGameComputer", "pemenangnya $winner")
         Handler(Looper.getMainLooper()).postDelayed({
             val view = LayoutInflater.from(this).inflate(R.layout.activity_dialog, null, false)
             val dialogBuilder = AlertDialog.Builder(this)
@@ -249,9 +257,7 @@ class MainGameComputer : AppCompatActivity(), IControllerNya {
             }
             dialogD1.show()
         }, 2 * randDuration
-
         )
-        Log.i("MainActivity", "pemenangnya : $resultNya")
     }
 
     override fun onBackPressed() {
@@ -260,5 +266,6 @@ class MainGameComputer : AppCompatActivity(), IControllerNya {
             snackComp.dismiss()
             finish()
         }.show()
+        Log.i("MainGameComputer", "Keluar")
     }
 }

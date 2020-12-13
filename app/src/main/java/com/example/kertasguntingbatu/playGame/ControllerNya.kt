@@ -10,9 +10,9 @@ class ControllerNya(private val listener: IControllerNya) {
 
     fun setDataPlayer(dataPlayer: ModelNya) {
         this.dataPlayer = dataPlayer
-        Log.i("ContollerPermainan", "game mode ${dataPlayer.modeGame} dari Model")
-        Log.i("ContollerPermainan", "Ambil data Pilihan pemain 1 ${dataPlayer.dataPlayer1} dari Model")
-        Log.i("ContollerPermainan", "Ambil data Pilihan pemain 2 ${dataPlayer.dataPlayer2} dari Model")
+        Log.i("ControllerNya", "game mode ${dataPlayer.modeGame} dari Model")
+        Log.i("ControllerNya", "Ambil data Pilihan pemain 1 ${dataPlayer.dataPlayer1} dari Model")
+        Log.i("ControllerNya", "Ambil data Pilihan pemain 2 ${dataPlayer.dataPlayer2} dari Model")
     }
 
     fun compRand() {
@@ -22,7 +22,7 @@ class ControllerNya(private val listener: IControllerNya) {
     fun chooseEnemy(){
         if (dataPlayer!!.modeGame=="vsCPU"){
             listener.resultEnemy(compRandData)
-            Log.i("ContollerPermainan", "Com memilih = $compRandData")
+            Log.i("ControllerNya", "CPU memilih = $compRandData")
         }
         else{
             listener.resultEnemy(dataPlayer!!.dataPlayer2)
@@ -50,7 +50,7 @@ class ControllerNya(private val listener: IControllerNya) {
             "Seri"
         }
         listener.resultWinner(resultNya)
-        Log.i("Controllernya", "Siapa nih yang menang $resultNya")
+        Log.i("ControllerNya", "Siapa nih yang menang $resultNya")
     }
 
 
