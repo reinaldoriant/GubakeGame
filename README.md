@@ -13,7 +13,7 @@ Demo Apps v1.0 :
 Demo Apps v2.0 :
 
 
-![asciicast](https://gph.is/g/ZnXV7DR)
+![asciicast](https://media.giphy.com/media/3Usm6J5dPXqCw8G2OY/giphy.gif)
 
 Update History :
 
