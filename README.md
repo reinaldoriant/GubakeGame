@@ -61,14 +61,14 @@ a Janken Game is  is the Japanese equivalent of Rock Paper Scissors, but taken t
   Beta version
   
   # License 
-`Copyright 2020 Reinaldo Riant
+      Copyright 2020 Reinaldo Riant
 
-Licensed under the GNU General Public License v3.0;
-you may not use this file except in compliance with the License.
+      Licensed under the GNU General Public License v3.0;
+      you may not use this file except in compliance with the License.
 
-  The GNU General Public License does not permit incorporating your program
-into proprietary programs.  If your program is a subroutine library, you
-may consider it more useful to permit linking proprietary applications with
-the library.  If this is what you want to do, use the GNU Lesser General
-Public License instead of this License.  But first, please read
-<https://www.gnu.org/licenses/why-not-lgpl.html>.`
+        The GNU General Public License does not permit incorporating your program
+      into proprietary programs.  If your program is a subroutine library, you
+      may consider it more useful to permit linking proprietary applications with
+      the library.  If this is what you want to do, use the GNU Lesser General
+      Public License instead of this License.  But first, please read
+      <https://www.gnu.org/licenses/why-not-lgpl.html>.
