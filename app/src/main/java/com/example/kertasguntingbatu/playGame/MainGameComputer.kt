@@ -50,9 +50,6 @@ class MainGameComputer : AppCompatActivity(), IControllerNya {
                 findViewById(R.id.player2)
         )
     }
-    private val intentNya by lazy {
-                Intent(this@MainGameComputer, MainMenu::class.java)
-    }
     private val controller = ControllerNya(this)
     private val randDuration = 1000L
     private val animRand = 200L
