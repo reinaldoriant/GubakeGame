@@ -16,6 +16,10 @@ a Janken Game is  is the Japanese equivalent of Rock Paper Scissors, but taken t
 
 ## Update History :
 
+- **24 December 2020** :
+
+  Fix bug from computer vs player (force close) and fix bug player vs player (player 1 and player 2 can choose mutiple) (V2.1)
+
 - **13 December 2020** :
 
   Fix bug toast in player vs computer, fix bug  of exit from apps in main menu and slide page, modify logo in game playing and take from internet (V2.0)
