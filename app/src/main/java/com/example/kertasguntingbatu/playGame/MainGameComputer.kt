@@ -12,6 +12,7 @@ import android.view.animation.AnimationUtils
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.isVisible
 import com.bumptech.glide.Glide
 import com.example.kertasguntingbatu.MainMenu
@@ -23,7 +24,7 @@ import kotlinx.android.synthetic.main.activity_maingame.*
 class MainGameComputer : AppCompatActivity(), IControllerNya {
     private val imgLogo = "https://i.ibb.co/HC5ZPgD/splash-screen1.png"
     private var dataPlayer1 = ""
-    private val layoutImage: LinearLayout by lazy { findViewById(R.id.activity_maingame) }
+    private val layoutImage: ConstraintLayout by lazy { findViewById(R.id.activity_maingame) }
     private val resetFun by lazy {
         findViewById<ImageView>(R.id.imageBattle)
     }
@@ -48,6 +49,9 @@ class MainGameComputer : AppCompatActivity(), IControllerNya {
                 findViewById<TextView>(R.id.player1),
                 findViewById(R.id.player2)
         )
+    }
+    private val intentNya by lazy {
+                Intent(this@MainGameComputer, MainMenu::class.java)
     }
     private val controller = ControllerNya(this)
     private val randDuration = 1000L
@@ -106,10 +110,12 @@ class MainGameComputer : AppCompatActivity(), IControllerNya {
             }
         }
         buttonAll[6].setOnClickListener {
+            buttonAll[6].startAnimation(animation)
             reset()
             Log.i("MainGameComputer", "playernya klik reset")
         }
         buttonAll[7].setOnClickListener {
+            buttonAll[7].startAnimation(animation)
             onBackPressed()
             Log.i("MainGameComputer", "playernya klik keluar")
         }
@@ -255,7 +261,10 @@ class MainGameComputer : AppCompatActivity(), IControllerNya {
                 startActivity(intentDialog)
 
             }
-            dialogD1.show()
+            if (!isFinishing) {
+                dialogD1.show()
+            }
+
         }, 2 * randDuration
         )
     }
