@@ -45,12 +45,12 @@
         android:id="@+id/btnNameInput"
         android:layout_width="40dp"
         android:layout_height="40dp"
+        android:layout_marginEnd="32dp"
         android:background="@drawable/ic_next"
+        android:contentDescription="@string/back_menu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="32dp"
-        app:layout_constraintTop_toBottomOf="@+id/guideLine"
-        android:contentDescription="@string/back_menu" />
+        app:layout_constraintTop_toBottomOf="@+id/guideLine" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

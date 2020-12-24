@@ -12,6 +12,7 @@ import android.view.animation.AnimationUtils
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.isVisible
 import com.bumptech.glide.Glide
 import com.example.kertasguntingbatu.MainMenu
@@ -24,7 +25,7 @@ class MainGamePlayer : AppCompatActivity(), IControllerNya {
     private val imgLogo = "https://i.ibb.co/HC5ZPgD/splash-screen1.png"
     private var dataPlayer1 = ""
     private var dataPlayer2 = ""
-    private val layoutImage: LinearLayout by lazy { findViewById(R.id.activity_maingame) }
+    private val layoutImage: ConstraintLayout by lazy { findViewById(R.id.activity_maingame) }
     private val resetFun by lazy {
         findViewById<ImageView>(R.id.imageBattle)
     }
@@ -122,14 +123,11 @@ class MainGamePlayer : AppCompatActivity(), IControllerNya {
                         dataPlayer2 = "kertas"
                     }
                 }
-                if (dataPlayer1 != "" && dataPlayer2 != "") {
-                    lockButtonPlay1()
-                    lockButtonPlay2()
-                }
-
+                lockButtonPlay1()
                 if (dataPlayer1 != "" && dataPlayer2 != "") {
                     Toast.makeText(this, "$namePlay Memilih $dataPlayer1", Toast.LENGTH_SHORT)
                             .show()
+                    lockButtonPlay2()
                     dataModel()
                     resetFun.animate().alpha(0f).scaleX(0.5f).scaleY(0.5f).setDuration(500).start()
                     buttonAll[7].animate().alpha(0f).scaleX(0.5f).scaleY(0.5f).setDuration(500)
@@ -140,10 +138,14 @@ class MainGamePlayer : AppCompatActivity(), IControllerNya {
             }
         }
         buttonAll[6].setOnClickListener {
+            buttonAll[6].startAnimation(animation)
             reset()
+            unlockButton()
+            unlockButton2()
             Log.i("MainGamePlayer", "playernya klik reset")
         }
         buttonAll[7].setOnClickListener {
+            buttonAll[7].startAnimation(animation)
             onBackPressed()
             Log.i("MainGamePlayer", "playernya klik exit")
         }
@@ -176,15 +178,18 @@ class MainGamePlayer : AppCompatActivity(), IControllerNya {
 
     //unlock button semua
     private fun unlockButton() {
-        if (!buttonAll[0].isEnabled && !buttonAll[1].isEnabled && !buttonAll[2].isEnabled &&
-                !buttonAll[3].isEnabled && !buttonAll[4].isEnabled && !buttonAll[5].isEnabled
-        ) {
+        if (!buttonAll[0].isEnabled && !buttonAll[1].isEnabled && !buttonAll[2].isEnabled) {
             buttonAll[0].isEnabled = true
             Log.i("MainGamePlayer", "Cieee bisa buka batu")
             buttonAll[1].isEnabled = true
             Log.i("MainGamePlayer", "Cieee bisa buka gunting")
             buttonAll[2].isEnabled = true
             Log.i("MainGamePlayer", "Cieee bisa buka kertas")
+        }
+    }
+
+    private fun unlockButton2() {
+        if (!buttonAll[3].isEnabled && !buttonAll[4].isEnabled && !buttonAll[5].isEnabled) {
             buttonAll[3].isEnabled = true
             Log.i("MainGamePlayer", "Cieee bisa buka batu player 2")
             buttonAll[4].isEnabled = true
@@ -213,7 +218,7 @@ class MainGamePlayer : AppCompatActivity(), IControllerNya {
         buttonAll[7].animate().alpha(1f).scaleX(1f).scaleY(1f).setDuration(randDuration).start()
         dataPlayer1 = ""
         dataPlayer2 = ""
-        unlockButton()
+
     }
 
     //Animasi Random dari Computer
@@ -266,6 +271,8 @@ class MainGamePlayer : AppCompatActivity(), IControllerNya {
             winnerInfo.text = winner
             playAgain.setOnClickListener {
                 reset()
+                unlockButton()
+                unlockButton2()
                 dialogD1.dismiss()
             }
             backMenu.setOnClickListener {
