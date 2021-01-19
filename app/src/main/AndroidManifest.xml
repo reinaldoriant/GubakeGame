@@ -1,44 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ruangaldo.gubake">
+    package="com.gubake">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:allowBackup="false"
-        android:fullBackupContent="@xml/my_backup_rules"
-        android:icon="@drawable/ic_logo_image"
+        android:name="com.gubake.utils.App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_logo"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/ic_logo_backup"
+        android:roundIcon="@mipmap/ic_logo_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.FullScreen">
-        <activity android:name="com.ruangaldo.gubake.slidePage.SlidePage">
+        android:theme="@style/AppTheme"
+        android:fullBackupContent="@xml/backup_descriptor">
+        <activity android:name="com.gubake.ui.splashScreen.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
-        <activity android:name="com.ruangaldo.gubake.MainMenu">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
-        <activity android:name="com.ruangaldo.gubake.SplashScreen">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.ruangaldo.gubake.playGame.MainGamePlayer">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
-        <activity android:name="com.ruangaldo.gubake.playGame.MainGameComputer">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
+        <activity android:name="com.gubake.ui.landingPage.LandingPageActivity"/>
+        <activity android:name="com.gubake.ui.signup.SignUpActivity" />
+        <activity android:name="com.gubake.ui.login.LoginActivity"/>
+        <activity android:name="com.gubake.ui.menu.MainMenuActivity" />
+        <activity android:name="com.gubake.ui.pilihLawan.PilihLawan"/>
+        <activity android:name="com.gubake.ui.playGame.MainGamePlayer" />
+        <activity android:name="com.gubake.ui.playGame.MainGameComputer"/>
+        <activity android:name="com.gubake.ui.profileteman.ProfileTeman"/>
     </application>
 
 </manifest>

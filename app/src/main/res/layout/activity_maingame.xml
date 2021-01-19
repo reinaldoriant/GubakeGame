@@ -1,60 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_maingame"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backgroundAll"
     android:orientation="vertical"
-    tools:context=".playGame.MainGameComputer">
+    android:background="@drawable/background"
+    tools:context=".ui.playGame.MainGameComputer">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/layout_top"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/layout_middle"
-        app:layout_constraintTop_toTopOf="parent"
-        >
+    <ImageButton
+        android:id="@+id/but_home"
+        android:layout_width="34dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/ic_home"
+        android:contentDescription="@string/string_close"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="27dp" />
 
-        <ImageButton
-            android:id="@+id/but_close"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/ic_close_but"
-            android:contentDescription="@string/close"
-            app:layout_constraintBottom_toTopOf="@id/logoImageGame"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+    <ImageView
+        android:id="@+id/logoImageGame"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:contentDescription="@string/logo_font" />
 
-        <ImageView
-            android:id="@+id/logoImageGame"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_gravity="center"
-            android:contentDescription="@string/logo_font"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
-        android:id="@+id/layout_middle"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
         android:layout_weight="1"
         android:gravity="center"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@id/layout_bottom"
-        app:layout_constraintTop_toBottomOf="@id/layout_top">
+        app:layout_constraintTop_toBottomOf="@id/logoImageGame"
+        tools:ignore="MissingConstraints,NotSibling"
+        tools:layout_editor_absoluteX="-8dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -70,8 +55,12 @@
                 android:layout_marginTop="0dp"
                 android:layout_marginEnd="24dp"
                 android:textColor="#00BCD4"
-                android:textSize="25sp"
-                android:textStyle="bold" />
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:autoSizeMaxTextSize="100sp"
+                app:autoSizeMinTextSize="12sp"
+                app:autoSizeStepGranularity="2sp"
+                app:autoSizeTextType="uniform" />
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -178,8 +167,12 @@
                 android:layout_marginTop="0dp"
                 android:layout_marginEnd="24dp"
                 android:textColor="#00BCD4"
-                android:textSize="25sp"
-                android:textStyle="bold" />
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:autoSizeMaxTextSize="100sp"
+                app:autoSizeMinTextSize="12sp"
+                app:autoSizeStepGranularity="2sp"
+                app:autoSizeTextType="uniform" />
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -257,26 +250,4 @@
         </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/layout_bottom"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layout_middle">
-
-        <ImageButton
-            android:id="@+id/refreshBut"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/ic_refresh_but"
-            android:contentDescription="@string/refresh_icon" />
-
-    </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

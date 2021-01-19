@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/activity_dialog"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/background_dialog">
+    android:background="@drawable/background_dialog"
+    android:orientation="vertical">
 
     <TextView
-        android:text="@string/text_result_game"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:fontFamily="@font/font_comic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="5dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:fontFamily="@font/font_comic"
+        android:text="@string/text_result_game"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/winner"
@@ -32,35 +31,51 @@
 
     <Button
         android:id="@+id/play_again"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/butt_green"
         android:text="@string/return_play"
+        android:textAllCaps="false"
         android:textColor="@color/black"
         android:textSize="18sp"
         android:textStyle="normal"
-        android:layout_gravity="center_horizontal"
-        android:textAllCaps="false"
-        app:backgroundTint="@color/green"
-        android:background="@drawable/butt_green"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"/>
+        app:backgroundTint="@color/green" />
 
     <Button
         android:id="@+id/back_menu"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/butt_orange"
         android:text="@string/back_menu"
+        android:textAllCaps="false"
         android:textColor="@color/black"
         android:textSize="18sp"
         android:textStyle="normal"
+        app:backgroundTint="@color/orange" />
+
+    <Button
+        android:id="@+id/quit"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
         android:layout_gravity="center_horizontal"
-        android:textAllCaps="false"
-        android:background="@drawable/butt_orange"
-        app:backgroundTint="@color/orange"
-        android:layout_marginTop="10dp"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="35dp"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"/>
+        android:background="@drawable/butt_orange"
+        android:text="@string/quit"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="normal"
+        app:backgroundTint="@color/blue" />
 
 </LinearLayout>
