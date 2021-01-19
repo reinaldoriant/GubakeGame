@@ -1,4 +1,4 @@
-package com.example.kertasguntingbatu.playGame
+package com.gubake.gubakegames.playGame
 
 import android.util.Log
 

@@ -1,4 +1,4 @@
-package com.example.kertasguntingbatu.playGame
+package com.gubake.gubakegames.playGame
 
 interface IControllerNya {
     fun resultEnemy(resultEnemy:String)

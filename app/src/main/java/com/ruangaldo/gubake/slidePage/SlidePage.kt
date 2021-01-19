@@ -1,4 +1,4 @@
-package com.example.kertasguntingbatu.slidePage
+package com.gubake.gubakegames.slidePage
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -8,8 +8,8 @@ import android.view.View
 import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.viewpager2.widget.ViewPager2
-import com.example.kertasguntingbatu.MainMenu
-import com.example.kertasguntingbatu.R
+import com.gubake.gubakegames.MainMenu
+import com.gubake.gubakegames.R
 import kotlinx.android.synthetic.main.activity_slide_page.*
 
 class SlidePage : AppCompatActivity() {
