@@ -1,4 +1,4 @@
-package com.gubake.gubakegames
+package com.ruangaldo.gubake
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,7 +7,7 @@ import android.os.Looper
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
-import com.gubake.gubakegames.slidePage.SlidePage
+import com.ruangaldo.gubake.slidePage.SlidePage
 
 private var animDuration = 1000L
 

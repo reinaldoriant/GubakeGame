@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.kertasguntingbatu">
+    package="com.ruangaldo.gubake">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -12,29 +12,29 @@
         android:roundIcon="@drawable/ic_logo_backup"
         android:supportsRtl="true"
         android:theme="@style/Theme.FullScreen">
-        <activity android:name=".slidePage.SlidePage">
+        <activity android:name="com.ruangaldo.gubake.slidePage.SlidePage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainMenu">
+        <activity android:name="com.ruangaldo.gubake.MainMenu">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name=".SplashScreen">
+        <activity android:name="com.ruangaldo.gubake.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".playGame.MainGamePlayer">
+        <activity android:name="com.ruangaldo.gubake.playGame.MainGamePlayer">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name=".playGame.MainGameComputer">
+        <activity android:name="com.ruangaldo.gubake.playGame.MainGameComputer">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>

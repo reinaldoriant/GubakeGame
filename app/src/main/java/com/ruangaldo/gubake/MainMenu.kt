@@ -1,4 +1,4 @@
-package com.gubake.gubakegames
+package com.ruangaldo.gubake
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,8 +6,8 @@ import android.util.Log
 import android.view.animation.AnimationUtils
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
-import com.gubake.gubakegames.playGame.MainGameComputer
-import com.gubake.gubakegames.playGame.MainGamePlayer
+import com.ruangaldo.gubake.playGame.MainGameComputer
+import com.ruangaldo.gubake.playGame.MainGamePlayer
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main_menu.*
 

@@ -1,4 +1,4 @@
-package com.gubake.gubakegames.playGame
+package com.ruangaldo.gubake.playGame
 
 import android.util.Log
 
