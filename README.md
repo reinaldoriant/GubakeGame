@@ -3,13 +3,9 @@
 ![asciicast](https://img.shields.io/badge/Kotlin-Language-yellow)
 
 
-a Janken Game is  is the Japanese equivalent of Rock Paper Scissors, but taken to a whole new level in terms of usage and importance in daily life. If there is ever a clash of opinions between two people in Japan, more often than not this potentially embarassing situation will be decided with janken. This use MVC concept and one of Binar Academy Wave 4 (Gold) assignment
+Gubake is (Rock Scissor Paper) a hand game usually played between two people, in which each player simultaneously forms one of three shapes with an outstretched hand
 
 ## Demo Apps v1.0 :
-
-![asciicast](https://media.giphy.com/media/xZqamKL9CVqJwBKUCn/giphy.gif)
-
-## Demo Apps v2.0 :
 
 
 ![asciicast](https://media.giphy.com/media/3Usm6J5dPXqCw8G2OY/giphy.gif)
