@@ -1,66 +1,31 @@
-# KertasGuntingBatu
+# Gubake
 ![asciicast](https://img.shields.io/badge/Android-Studio-green)
 ![asciicast](https://img.shields.io/badge/Kotlin-Language-yellow)
 
 
 Gubake is (Rock Scissor Paper) a hand game usually played between two people, in which each player simultaneously forms one of three shapes with an outstretched hand
 
-## Demo Apps v1.0 :
+## Demo Apps Version 1.0 :
 
 
 ![asciicast](https://media.giphy.com/media/3Usm6J5dPXqCw8G2OY/giphy.gif)
 
-## Update History :
+## Changelog :
 
-- **24 December 2020** :
+### Version 1.0 
 
-  Fix bug from computer vs player (force close) and fix bug player vs player (player 1 and player 2 can choose mutiple) (V2.1)
-
-- **13 December 2020** :
-
-  Fix bug toast in player vs computer, fix bug  of exit from apps in main menu and slide page, modify logo in game playing and take from internet (V2.0)
-
-- **12 December 2020** :
-
-  Fix snackbar's bug in main menu and splash screen (V1.9)
-  
-  Fix bug name data (v1.8)
-
-- **11 December 2020** :
-
-  Add Slide page and snack bar in Main Menu(V1.7)
-
-- **09 December 2020** :
-
-  Add player vs player feature(v1.6)
-
-  Modify player vs CPU feature. Change  data compare from  (player vs player and player vs cpu) feature(v1.5)
-
-- **06 December 2020** :
-
-  Add Main Menu and template vs player (v1.4)
+- Fix bug 
  
-- **04 December 2020** :
+- Add Slide page and snack bar in Main Menu
 
-  Revise logo with url and permission in splash screen and fix bug in splash screen (v1.3)
- 
-- **23 November 2020** :
-
-  Add layout v26 and fix bug (v1.2)
-
-- **22 November 2020** :
-
-  Fix bug (v1.1)  
-
-- **20 November 2020** :
-
-  First created (v1.0)
-
-- **19 November 2020** :
-
-  Beta version
+- Add player vs player feature
   
-  # License 
+- Modify player vs CPU feature. Change  data compare from  (player vs player and player vs cpu) feature
+
+- Add Main Menu and template vs player
+
+  
+ ## License 
       Copyright 2020 Reinaldo Riant
 
       Licensed under the GNU General Public License v3.0;
