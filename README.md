@@ -22,16 +22,18 @@ Gubake is (Rock Scissor Paper) a hand game usually played between two people, in
 
 ## Changelog :
 
+### Version 2.0 
+- Add pilih lawanmu
+- Add profile page edit and delete friends
+- Add profile page add friends
+- Add databases (DAO Room)
+- Add login and signup
+
 ### Version 1.0 
-
 - Fix bug 
- 
 - Add Slide page and snack bar in Main Menu
-
 - Add player vs player feature
-  
 - Modify player vs CPU feature. Change  data compare from  (player vs player and player vs cpu) feature
-
 - Add Main Menu and template vs player
 
   
