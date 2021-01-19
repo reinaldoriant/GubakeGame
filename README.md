@@ -1,14 +1,17 @@
 # Gubake
-![asciicast](https://img.shields.io/badge/Android-Studio-green)
-![asciicast](https://img.shields.io/badge/Kotlin-Language-yellow)
+[![forthebadge made-with-python](https://forthebadge.com/images/badges/built-for-android.svg)](https://www.android.com/)
 
 
 Gubake is (Rock Scissor Paper) a hand game usually played between two people, in which each player simultaneously forms one of three shapes with an outstretched hand
 
-## Demo Apps Version 1.0 :
+## Demo Version 1.0 :
 
 
 ![asciicast](https://media.giphy.com/media/3Usm6J5dPXqCw8G2OY/giphy.gif)
+
+## Status :
+
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 
 ## Changelog :
 
