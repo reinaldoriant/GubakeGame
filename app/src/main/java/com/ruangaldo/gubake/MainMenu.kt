@@ -1,4 +1,4 @@
-package com.example.kertasguntingbatu
+package com.gubake.gubakegames
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,8 +6,8 @@ import android.util.Log
 import android.view.animation.AnimationUtils
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
-import com.example.kertasguntingbatu.playGame.MainGameComputer
-import com.example.kertasguntingbatu.playGame.MainGamePlayer
+import com.gubake.gubakegames.playGame.MainGameComputer
+import com.gubake.gubakegames.playGame.MainGamePlayer
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main_menu.*
 

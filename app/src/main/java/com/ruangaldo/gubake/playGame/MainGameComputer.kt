@@ -1,4 +1,4 @@
-package com.example.kertasguntingbatu.playGame
+package com.gubake.gubakegames.playGame
 
 import android.content.Intent
 import android.os.Bundle
@@ -15,8 +15,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.isVisible
 import com.bumptech.glide.Glide
-import com.example.kertasguntingbatu.MainMenu
-import com.example.kertasguntingbatu.R
+import com.gubake.gubakegames.MainMenu
+import com.gubake.gubakegames.R
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_maingame.*
 
@@ -49,9 +49,6 @@ class MainGameComputer : AppCompatActivity(), IControllerNya {
                 findViewById<TextView>(R.id.player1),
                 findViewById(R.id.player2)
         )
-    }
-    private val intentNya by lazy {
-                Intent(this@MainGameComputer, MainMenu::class.java)
     }
     private val controller = ControllerNya(this)
     private val randDuration = 1000L

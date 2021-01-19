@@ -1,4 +1,4 @@
-package com.example.kertasguntingbatu.slidePage
+package com.gubake.gubakegames.slidePage
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity

@@ -1,4 +1,4 @@
-package com.example.kertasguntingbatu.slidePage
+package com.gubake.gubakegames.slidePage
 
 import android.os.Bundle
 import android.text.Editable
@@ -8,7 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.kertasguntingbatu.R
+import com.gubake.gubakegames.R
 import kotlinx.android.synthetic.main.fragment_activity.*
 
 private const val ARG_PARAM1 = "param1"

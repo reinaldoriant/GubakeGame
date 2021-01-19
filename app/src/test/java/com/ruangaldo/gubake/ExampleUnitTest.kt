@@ -1,4 +1,4 @@
-package com.example.kertasguntingbatu
+package com.gubake.gubakegames
 
 import org.junit.Test
 

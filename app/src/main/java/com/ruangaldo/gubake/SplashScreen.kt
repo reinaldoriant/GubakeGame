@@ -1,15 +1,13 @@
-package com.example.kertasguntingbatu
+package com.gubake.gubakegames
 
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.view.animation.Animation
-import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
-import com.example.kertasguntingbatu.slidePage.SlidePage
+import com.gubake.gubakegames.slidePage.SlidePage
 
 private var animDuration = 1000L
 
