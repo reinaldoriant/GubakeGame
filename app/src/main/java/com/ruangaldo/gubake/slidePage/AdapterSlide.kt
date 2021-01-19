@@ -1,4 +1,4 @@
-package com.gubake.gubakegames.slidePage
+package com.ruangaldo.gubake.slidePage
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity

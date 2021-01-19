@@ -1,4 +1,4 @@
-package com.gubake.gubakegames.playGame
+package com.ruangaldo.gubake.playGame
 
 import android.content.Intent
 import android.os.Bundle
@@ -15,8 +15,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.isVisible
 import com.bumptech.glide.Glide
-import com.gubake.gubakegames.MainMenu
-import com.gubake.gubakegames.R
+import com.ruangaldo.gubake.MainMenu
+import com.ruangaldo.gubake.R
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_maingame.*
 

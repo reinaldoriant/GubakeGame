@@ -1,4 +1,4 @@
-package com.gubake.gubakegames.playGame
+package com.ruangaldo.gubake.playGame
 
 interface IControllerNya {
     fun resultEnemy(resultEnemy:String)

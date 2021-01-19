@@ -1,4 +1,4 @@
-package com.gubake.gubakegames
+package com.ruangaldo.gubake
 
 import org.junit.Test
 
