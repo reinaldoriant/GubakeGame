@@ -1,28 +1,47 @@
 <resources>
-    <string name="app_name">Kertas Gunting Batu</string>
+    <string name="app_name">Gubake</string>
     <string name="scissors_icon">gunting computer</string>
-    <string name="player1">Player1</string>
     <string name="computer">CPU</string>
     <string name="rock_icon">rock_icon</string>
     <string name="paper_icon">paper_icon</string>
     <string name="versus_image">versus_image</string>
-    <string name="refresh_icon">refresh_icon</string>
     <string name="logo_font">Logo</string>
-    <string name="vs_play">Bermain suit melawan sesama pemain.</string>
-    <string name="vs_comp">Bermain suit melawan komputer.</string>
-    <string name="name_player">Tuliskan namamu di bawah</string>
-    <string name="vs_player">vs Pemain</string>
-    <string name="vs_computer">vs CPU</string>
-    <string name="choose_enemy">PILIH LAWANMU</string>
     <string name="text_winner">MENANG!</string>
     <string name="return_play">Main Lagi</string>
     <string name="back_menu">Kembali Ke Menu</string>
     <string name="text_result_game">Hasil Permainan</string>
-    <string name="close">close but</string>
-    <string name="Player2">"Player 2"</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="input_name">Masukkan Namamu</string>
+    <string name="quit">Keluar Aplikasi</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">LOGIN</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="playervsplayer">playervsplayer</string>
+    <string name="player">Player</string>
+    <string name="vs_teman"> vs Teman</string>
+    <string name="playervscpu">playervscpu</string>
+    <string name="vs_computer"> vs Computer</string>
+    <string name="profile_dan_daftar_teman">Profile dan Daftar Teman</string>
+    <string name="logout">Logout</string>
+    <string name="home">home</string>
 
+    <string name="next">Next</string>
+    <string name="string_close">$string/close</string>
+    <string name="nama_player">Nama Player :</string>
+    <string name="alamat_email">Alamat Email :</string>
+    <string name="daftar_teman">Daftar Teman</string>
+    <string name="tambah_teman">tambah teman</string>
+    <string name="re_password">Re-Password</string>
+    <string name="email">Email</string>
+    <string name="siapa_nama_temanmu_dan_emailnya">Siapa nama temanmu dan emailnya?</string>
+    <string name="nama_temanmu">Nama Temanmu</string>
+    <string name="email_temanmu">Email Temanmu</string>
+    <string name="save">Save</string>
+    <string name="nama_dan_email_teman_kamu_adalah">Nama dan email teman kamu adalah</string>
+    <string name="nama">Nama</string>
+    <string name="delete">Delete</string>
+    <string name="title">Title</string>
+    <string name="nama_teman">Nama :</string>
+    <string name="email_teman">Email :</string>
+    <string name="edit">edit</string>
 
 </resources>
