@@ -4,8 +4,9 @@
 
 Gubake is (Rock Scissor Paper) a hand game usually played between two people, in which each player simultaneously forms one of three shapes with an outstretched hand
 
-## Demo Version 1.0 :
+## Demo Apps :
 
+### Version 1.0
 
 ![asciicast](https://media.giphy.com/media/3Usm6J5dPXqCw8G2OY/giphy.gif)
 
