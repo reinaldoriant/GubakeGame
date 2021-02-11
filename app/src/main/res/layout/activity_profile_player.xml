@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lParent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.profileplayer.ProfilePlayer">
+
+    <ImageView
+        android:id="@+id/ivBackProfile"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="16dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+        android:contentDescription="@string/home"
+        android:src="@drawable/ic_back_blue" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        app:cardBackgroundColor="@color/ColorBgButGray"
+        app:cardCornerRadius="20dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingTop="32dp"
+            android:paddingBottom="32dp">
+
+            <ImageView
+                android:id="@+id/IvOuterPhoto"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:background="@drawable/bg_outer_profile"
+                android:contentDescription="@string/ivFotoUser"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivProfile"
+                android:layout_width="170dp"
+                android:layout_height="170dp"
+                android:layout_marginTop="6dp"
+                android:contentDescription="@string/tvMyProfile"
+                android:src="@drawable/ic_user"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:fontFamily="@font/comic"
+                android:text="@string/username"
+                android:textColor="@color/colorBgWhite"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="@+id/IvOuterPhoto"
+                app:layout_constraintStart_toStartOf="@+id/IvOuterPhoto"
+                app:layout_constraintTop_toBottomOf="@+id/IvOuterPhoto" />
+
+            <TextView
+                android:id="@+id/tvEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/comic"
+                android:text="@string/email"
+                android:textColor="@color/colorBgWhite"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@+id/tvName"
+                app:layout_constraintStart_toStartOf="@+id/tvName"
+                app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btEdit"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/bg_shape_back_blue"
+        android:fontFamily="@font/comic"
+        android:text="@string/edit_profile"
+        android:textAllCaps="false"
+        android:textColor="@color/colorBgWhite"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:backgroundTint="@color/ColorBgButGray" />
+
+    <Button
+        android:id="@+id/btSignOut"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/bg_but_orange"
+        android:fontFamily="@font/comic"
+        android:text="@string/tvSignOut"
+        android:textAllCaps="false"
+        android:textColor="@color/ColorBlackFont"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvAbout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="4dp"
+            android:fontFamily="@font/comic"
+            android:text="@string/tvAbout"
+            android:textColor="@color/ColorBlackFont"
+            android:textStyle="bold"
+            android:layout_marginStart="4dp" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottieAbout"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="4dp"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/ic_about"
+            android:layout_marginEnd="4dp" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -2,16 +2,16 @@ package com.gubake.utils
 
 import android.app.Application
 import android.content.Context
-import com.gubake.data.database.TemanDatabase
+import java.lang.ref.WeakReference
 
 class App: Application() {
     companion object{
-        var context: Context? = null
-        var mDB: TemanDatabase?=null
+        lateinit  var context : WeakReference<Context>
     }
 
     override fun onCreate() {
         super.onCreate()
-        context =applicationContext
+        context = WeakReference(applicationContext)
+
     }
 }
