@@ -7,7 +7,8 @@ import androidx.room.OnConflictStrategy.REPLACE
 interface TemanDao {
 
     @Query("SELECT * FROM Teman WHERE idplayer=:idplayer")
-    fun getAllbyId(idplayer:Int): List<Teman>
+    fun getAllbyId(idplayer:String): List<Teman>
+
     @Insert(onConflict = REPLACE)
     fun insertTeman(teman: Teman):Long
 

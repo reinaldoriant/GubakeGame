@@ -14,7 +14,7 @@ private const val ARG_PARAM1 = "param1"
 class SecondFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
-
+    private lateinit var listener: (CharSequence) -> Unit
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -49,8 +49,9 @@ class SecondFragment : Fragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance(param1: String) =
+        fun newInstance(param1: String, listener: (CharSequence) -> Unit) =
             SecondFragment().apply {
+                this.listener = listener
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                 }

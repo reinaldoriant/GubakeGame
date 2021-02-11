@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">Gubake</string>
+    <string name="app_name">Gu Ba Ke</string>
     <string name="scissors_icon">gunting computer</string>
-    <string name="computer">CPU</string>
+    <string name="computer">computer</string>
     <string name="rock_icon">rock_icon</string>
     <string name="paper_icon">paper_icon</string>
     <string name="versus_image">versus_image</string>
@@ -9,39 +9,58 @@
     <string name="text_winner">MENANG!</string>
     <string name="return_play">Main Lagi</string>
     <string name="back_menu">Kembali Ke Menu</string>
-    <string name="text_result_game">Hasil Permainan</string>
-    <string name="quit">Keluar Aplikasi</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
-    <string name="login">LOGIN</string>
     <string name="sign_up">SIGN UP</string>
     <string name="playervsplayer">playervsplayer</string>
-    <string name="player">Player</string>
-    <string name="vs_teman"> vs Teman</string>
     <string name="playervscpu">playervscpu</string>
-    <string name="vs_computer"> vs Computer</string>
-    <string name="profile_dan_daftar_teman">Profile dan Daftar Teman</string>
-    <string name="logout">Logout</string>
     <string name="home">home</string>
 
     <string name="next">Next</string>
     <string name="string_close">$string/close</string>
-    <string name="nama_player">Nama Player :</string>
-    <string name="alamat_email">Alamat Email :</string>
     <string name="daftar_teman">Daftar Teman</string>
     <string name="tambah_teman">tambah teman</string>
-    <string name="re_password">Re-Password</string>
+    <string name="repassword">Re-Password</string>
     <string name="email">Email</string>
-    <string name="siapa_nama_temanmu_dan_emailnya">Siapa nama temanmu dan emailnya?</string>
     <string name="nama_temanmu">Nama Temanmu</string>
     <string name="email_temanmu">Email Temanmu</string>
     <string name="save">Save</string>
-    <string name="nama_dan_email_teman_kamu_adalah">Nama dan email teman kamu adalah</string>
     <string name="nama">Nama</string>
     <string name="delete">Delete</string>
     <string name="title">Title</string>
-    <string name="nama_teman">Nama :</string>
-    <string name="email_teman">Email :</string>
     <string name="edit">edit</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="ivLogoApps">logo apps</string>
+    <string name="tvGameHistory">Game History</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="play_mode">Play mode</string>
+    <string name="result">result</string>
+    <string name="tvEmail">Email</string>
+    <string name="tvPassword">Password</string>
+    <string name="tvSignin">Signin</string>
+    <string name="tvSignup">Signup</string>
+    <string name="ivFotoUser">FotoUser</string>
+    <string name="tvStart">Start</string>
+    <string name="tvMyProfile">My profile</string>
+    <string name="tvMyFriends">My friends</string>
+    <string name="tvSettings">Settings</string>
+    <string name="tvOut">Exit Game</string>
+    <string name="tvSeeInstruction">See the instruction</string>
+    <string name="loading">Loading…</string>
+    <string name="tvPickMode">Pick mode game play ?</string>
+    <string name="btChooseMode">Choose Mode</string>
+    <string name="vs">Vs</string>
+    <string name="tvDescription">Gubake (Gunting Batu Kertas) is the Rock Paper Scissors game, but taken to a whole new level in terms of usage and importance in daily life. This game can play with your friends or computer. </string>
+    <string name="createdBy">Tim A Binar Academy @ 2021</string>
+    <string name="tvSignOut">Signout</string>
+    <string name="tvAbout">About</string>
+    <string name="_0">0</string>
+    <string name="score">score</string>
+    <string name="tvname_friend">Name Friend</string>
+    <string name="tvSelamat">Selamat!</string>
+    <string name="tvKamuPemain">Kamu menjadi pemain dari \nGubake Game</string>
+    <string name="tvInstruction">This is instruction to play Gubake. You can see the instructions in this video above</string>
+    <string name="date">Date</string>
+
 
 </resources>

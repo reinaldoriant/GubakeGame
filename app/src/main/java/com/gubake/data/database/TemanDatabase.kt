@@ -5,11 +5,9 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [Teman::class, Pemain::class], version = 1)
+@Database(entities = [Teman::class], version = 1)
 abstract class TemanDatabase :RoomDatabase() {
     abstract fun temanDao() : TemanDao
-    abstract fun pemainDao() : PemainDao
-
     companion object{
         private var INSTANCE : TemanDatabase? =null
 
@@ -17,7 +15,7 @@ abstract class TemanDatabase :RoomDatabase() {
             if (INSTANCE == null){
                 synchronized(TemanDatabase::class){
                     INSTANCE = Room.databaseBuilder(context.applicationContext,
-                    TemanDatabase::class.java, "myDB").build()
+                        TemanDatabase::class.java, "myDB").build()
                 }
             }
             return INSTANCE

@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.gubake.ui.playgamevsplayer.PlayGameVsPlayerViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_gray_game"
+        tools:context=".ui.gamePlay.VsPlayerActivity">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/iv_back"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="16dp"
+                    android:contentDescription="@string/back_menu"
+                    android:src="@drawable/ic_back_white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_username"
+                    android:layout_width="117dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="48dp"
+                    android:layout_marginTop="64dp"
+                    android:layout_marginEnd="48dp"
+                    android:fontFamily="@font/comic"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="@={viewModel.username}"
+                    android:textColor="@color/colorWhiteFont"
+                    android:textSize="18sp"
+                    app:autoSizeMaxTextSize="100sp"
+                    app:autoSizeMinTextSize="12sp"
+                    app:autoSizeStepGranularity="2sp"
+                    app:autoSizeTextType="uniform"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_back" />
+
+                <TextView
+                    android:id="@+id/tv_skor"
+                    android:layout_width="117dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="48dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="48dp"
+                    android:background="@drawable/bg_but_orange"
+                    android:fontFamily="@font/comic"
+                    android:gravity="center"
+                    android:text="@string/_0"
+                    android:textColor="@color/ColorBlackFont"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_username" />
+
+                <ImageView
+                    android:id="@+id/iv_batu"
+                    android:layout_width="113dp"
+                    android:layout_height="113dp"
+                    android:layout_marginStart="48dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="48dp"
+                    android:background="@drawable/bg_box_white_round"
+                    android:contentDescription="@string/rock_icon"
+                    android:src="@drawable/ic_batu_kiri"
+                    android:tag="batu"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_skor" />
+
+                <ImageView
+                    android:id="@+id/iv_gunting"
+                    android:layout_width="113dp"
+                    android:layout_height="113dp"
+                    android:layout_marginStart="48dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="48dp"
+                    android:background="@drawable/bg_box_white_round"
+                    android:contentDescription="@string/scissors_icon"
+                    android:src="@drawable/ic_gunting_kiri"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_batu" />
+
+                <ImageView
+                    android:id="@+id/iv_kertas"
+                    android:layout_width="113dp"
+                    android:layout_height="113dp"
+                    android:layout_marginStart="48dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="48dp"
+                    android:background="@drawable/bg_box_white_round"
+                    android:contentDescription="@string/paper_icon"
+                    android:src="@drawable/ic_kertas_kiri"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_gunting" />
+
+                <TextView
+                    android:id="@+id/tv_teman"
+                    android:layout_width="117dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="64dp"
+                    android:layout_marginEnd="48dp"
+                    android:layout_marginStart="48dp"
+                    android:fontFamily="@font/comic"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="@={viewModel.teman}"
+                    android:textColor="@color/colorWhiteFont"
+                    android:textSize="18sp"
+                    app:autoSizeMaxTextSize="100sp"
+                    app:autoSizeMinTextSize="12sp"
+                    app:autoSizeStepGranularity="2sp"
+                    app:autoSizeTextType="uniform"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_back" />
+
+                <TextView
+                    android:id="@+id/tv_skor_lawan"
+                    android:layout_width="117dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="48dp"
+                    android:layout_marginStart="48dp"
+                    android:background="@drawable/bg_but_orange"
+                    android:fontFamily="@font/comic"
+                    android:gravity="center"
+                    android:text="@string/_0"
+                    android:textColor="@color/ColorBlackFont"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_username" />
+
+                <ImageView
+                    android:id="@+id/iv_batu_lawan"
+                    android:layout_width="113dp"
+                    android:layout_height="113dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="48dp"
+                    android:layout_marginStart="48dp"
+                    android:background="@drawable/bg_box_white_round"
+                    android:contentDescription="@string/rock_icon"
+                    android:src="@drawable/ic_batu_kanan"
+                    android:visibility="invisible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_skor_lawan" />
+
+                <ImageView
+                    android:id="@+id/iv_gunting_lawan"
+                    android:layout_width="113dp"
+                    android:layout_height="113dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="48dp"
+                    android:layout_marginStart="48dp"
+                    android:background="@drawable/bg_box_white_round"
+                    android:contentDescription="@string/scissors_icon"
+                    android:src="@drawable/ic_gunting_kanan"
+                    android:visibility="invisible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_batu" />
+
+                <ImageView
+                    android:id="@+id/iv_kertas_lawan"
+                    android:layout_width="113dp"
+                    android:layout_height="113dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="48dp"
+                    android:layout_marginStart="48dp"
+                    android:background="@drawable/bg_box_white_round"
+                    android:contentDescription="@string/paper_icon"
+                    android:src="@drawable/ic_kertas_kanan"
+                    android:visibility="invisible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_gunting" />
+
+                <TextView
+                    android:layout_width="180dp"
+                    android:layout_height="77dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/bg_but_cream"
+                    android:fontFamily="@font/comic"
+                    android:gravity="center"
+                    android:text="@string/vs"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorWhiteFont"
+                    android:textSize="32sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_kertas" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

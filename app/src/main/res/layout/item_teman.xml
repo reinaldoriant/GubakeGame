@@ -4,68 +4,53 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="4dp"
+    app:backgroundTint="@color/colorBgWhite"
     app:cardCornerRadius="10dp"
-    app:backgroundTint="@color/white"
     app:cardElevation="4dp"
     app:cardUseCompatPadding="true"
     app:contentPadding="8dp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <TextView
-
-            android:id="@+id/labelNama"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/nama_teman"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
             android:id="@+id/tvNama"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_toStartOf="@+id/ivEdit"
+            android:fontFamily="@font/comic"
             android:text="@string/nama"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@id/labelNama"
-            app:layout_constraintStart_toEndOf="@id/labelNama"
-            app:layout_constraintTop_toTopOf="@id/labelNama"
-            android:layout_marginLeft="8dp" />
-
-        <TextView
-            android:id="@+id/labelEmail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/email_teman"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/labelNama" />
+            android:textColor="@color/ColorBlackFont"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tvEmail"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/tvNama"
             android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_toStartOf="@+id/ivEdit"
+            android:fontFamily="@font/comic"
             android:text="@string/email"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@id/labelEmail"
-            app:layout_constraintStart_toEndOf="@id/labelEmail"
-            app:layout_constraintTop_toTopOf="@id/labelEmail"
-            android:layout_marginLeft="8dp" />
+            android:textColor="@color/ColorBlackFont"
+            android:textSize="18sp" />
 
         <ImageView
             android:id="@+id/ivEdit"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:src="@drawable/ic_edit"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:contentDescription="@string/edit" />
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:contentDescription="@string/edit"
+            android:src="@drawable/ic_edit" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
 </androidx.cardview.widget.CardView>
