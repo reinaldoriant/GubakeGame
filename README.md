@@ -2,7 +2,7 @@
 [![forthebadge made-with-android](https://forthebadge.com/images/badges/built-for-android.svg)](https://www.android.com/)
 
 
-Gubake is (Rock Scissor Paper) a hand game usually played between two people, in which each player simultaneously forms one of three shapes with an outstretched hand
+Gu Ba Ke (Gunting Batu Kertas) is the Rock Paper Scissors game, but taken to a whole new level in terms of usage and importance in daily life. This game can play with your friends or computer. 
 
 ## Status :
 
@@ -22,12 +22,21 @@ Gubake is (Rock Scissor Paper) a hand game usually played between two people, in
 
 ## Changelog :
 
+### Version 3.0 
+- Re-design UI and re-brand apps
+- Add edit profile and no Connection features
+- Add game history and instruction with video features
+- Improve Game Play performance and logic
+- Save data using RestAPI
+- Implement MVVM architectures
+
 ### Version 2.0 
 - Add pilih lawanmu
 - Add profile page edit and delete friends
 - Add profile page add friends
 - Add databases (DAO Room)
 - Add login and signup
+- Implement MVP architectures
 
 ### Version 1.0 
 - Fix bug 
@@ -35,6 +44,7 @@ Gubake is (Rock Scissor Paper) a hand game usually played between two people, in
 - Add player vs player feature
 - Modify player vs CPU feature. Change  data compare from  (player vs player and player vs cpu) feature
 - Add Main Menu and template vs player
+- Implement MVC architectures
 
   
  ## License 
