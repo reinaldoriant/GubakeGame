@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "335144679963",
+    "firebase_url": "https://gubake-c71fe-default-rtdb.firebaseio.com",
+    "project_id": "gubake-c71fe",
+    "storage_bucket": "gubake-c71fe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:335144679963:android:9c6a5f0c9a583ce75856be",
+        "android_client_info": {
+          "package_name": "com.gubake"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "335144679963-fsmr36m29gvn5drtab8i4fpvf99kijso.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGlY8HHpIksgfiS9xvdo_jyu3jLspqSB0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "335144679963-fsmr36m29gvn5drtab8i4fpvf99kijso.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

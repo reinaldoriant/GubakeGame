@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'com.google.gms.google-services'
 }
 
 
@@ -14,7 +15,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
-        versionName "1.0"
+        versionName "1.0-release"
         multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -46,6 +47,9 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.firebase:firebase-firestore:22.1.0'
+    implementation 'com.google.firebase:firebase-auth:20.0.2'
+    implementation 'com.google.firebase:firebase-storage:19.2.1'
     testImplementation 'junit:junit:4.13.1'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
@@ -57,7 +61,7 @@ dependencies {
     def room_version = "2.2.6"
     implementation "androidx.room:room-runtime:$room_version"
     kapt "androidx.room:room-compiler:$room_version"
-
+    implementation "androidx.room:room-ktx:$room_version"
     //library view tambahan
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'androidx.cardview:cardview:1.0.0'
@@ -93,11 +97,10 @@ dependencies {
 
     implementation "org.koin:koin-android:1.0.2"
     implementation "org.koin:koin-android-viewmodel:1.0.2"
-
+    //library no internet
     implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'
-
     implementation 'org.imaginativeworld.oopsnointernet:oopsnointernet:2.0.0'
-
-    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.6'
+/*
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.6'*/
 
 }
