@@ -1,12 +1,13 @@
+
+<a href='https://play.google.com/store/apps/details?id=com.gubake&hl=en&gl=US&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/></a>
 # Gubake
 [![forthebadge made-with-android](https://forthebadge.com/images/badges/built-for-android.svg)](https://www.android.com/)
-
 
 Gu Ba Ke (Gunting Batu Kertas) is the Rock Paper Scissors game, but taken to a whole new level in terms of usage and importance in daily life. This game can play with your friends or computer. 
 
 ## Status :
 
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/reinaldoriant/GubakeGame)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-no-red.svg)](https://github.com/reinaldoriant/GubakeGame)
 
 ## Requirements :
 
